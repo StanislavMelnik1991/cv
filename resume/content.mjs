@@ -82,7 +82,6 @@ export const resumes = {
     ],
     smallerProjects: [
       '**Twitch-бот · март 2026.** Прототип на Next.js 16: Twitch OAuth, Telegram / Telegraf, дедупликация сообщений; миграция с Prisma на TypeORM.',
-      '**Wuthering Waves Championship · октябрь 2024.** Next.js 14, FSD, JWT, Telegram Login, личный кабинет и локализация.',
     ],
     skills: [
       ['Frontend', 'TypeScript · React · Next.js · React Router · Redux Toolkit · TanStack Query'],
@@ -175,7 +174,6 @@ export const resumes = {
     ],
     smallerProjects: [
       '**Twitch bot · March 2026.** Next.js 16 prototype: Twitch OAuth, Telegram / Telegraf, message deduplication; migrated from Prisma to TypeORM.',
-      '**Wuthering Waves Championship · October 2024.** Next.js 14, FSD, JWT, Telegram Login, user account, and localization.',
     ],
     skills: [
       ['Frontend', 'TypeScript · React · Next.js · React Router · Redux Toolkit · TanStack Query'],

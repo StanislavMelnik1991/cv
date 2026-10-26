@@ -98,11 +98,6 @@ EdWin is an AI analytics service with a chat interface. Developed the frontend f
 
 LLM responses in Twitch chat, Twitch OAuth, a Telegram bot for administration, message deduplication, reply threads. Migrated the project from Prisma to TypeORM.
 
-### Wuthering Waves Championship — tournament website
-**October 2024** · Next.js 14, React 18, FSD, SCSS
-
-JWT authentication and Telegram login, personal account, character and weapon catalog, localization.
-
 ---
 
 ## Skills
