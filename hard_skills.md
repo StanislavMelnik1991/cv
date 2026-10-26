@@ -1,179 +1,168 @@
-# Хард-скилы (на основе истории коммитов 2026)
+# Hard skills — итоговый профиль за 2022–2026
 
-**Источник данных:** история коммитов репозиториев `2026\giga-monorepo` и `2026\starup` (локальный каталог `D:\Work`).
-**Автор коммитов:** Stanislau Melnik (логин GitHub: `StanislauMelnik1991`, коммиты подписаны как `Stanislau Melnik` / `Stanislau`, email `sm@cityos.pro` и `stanislavmelnik@gmail.com`). Посторонние коммиты от других авторов не учитывались — в analysed периодах все коммиты принадлежат Станиславу.
-**Период активности:** май — октябрь 2026.
-**Общий объём:** 187 коммитов (185 в `starup`, 2 в `giga-monorepo`).
+**Дата обновления:** 26.10.2026. Данные за 2026 год охватывают период по эту дату.
 
----
+Основное направление — full-stack разработка на TypeScript: React / Next.js на клиенте, Node.js / NestJS на сервере. Опыт включает модульные продуктовые интерфейсы, дизайн-системы, REST API и микросервисы, PostgreSQL, real-time и медиа, интеграции LLM и чат-ботов.
 
-## 1. Краткий обзор проектов
+## Источники и принцип объединения
 
-| Репозиторий | Описание | Коммиты | Период |
-|-------------|----------|---------|--------|
-| `2026\starup` (`edwin-frontend`) | Фронтенд-часть приложения EdWin на React + TypeScript + Vite с архитектурой Feature-Sliced Design (FSD): чат анализа, сессии, персоны, задачи, роутинг, аутентификация, дизайн-система, Storybook, тестирование, CI/CD. | 185 | май — июль 2026 |
-| `2026\giga-monorepo` | Монорепозиторий с git-сабмодулями (`city-monorepo`, `nw-monorepo`) и конфигурацией AI-агентов OpenCode (free-first конфигурация агентов). | 2 | август, октябрь 2026 |
+Документ объединяет [2022](hard_skills_2022.md), [2023](hard_skills_2023.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md) и [2026](hard_skills_2026.md). Дополнительно учтены [self-проекты](hard_skills_selfprojects.md) и сохранены уникальные сведения прежней версии `hard_skills.md` о проектах `starup` / EdWin и `giga-monorepo` за 2026 год.
 
----
+Повторяющиеся навыки объединены по направлениям. Годы в ссылках указывают источники сведений, а не непрерывный стаж использования технологии. Версии отражают встречающиеся в материалах версии.
 
-## 2. Хард-скилы по категориям
+Это сводка существующих анализов, основанных на сообщениях коммитов, конфигурациях и структуре проектов. Полная повторная проверка изменений кода здесь не проводилась. Инструменты, описанные преимущественно через конфигурацию, выделены отдельно: наличие зависимости само по себе не подтверждает глубину владения. Числа коммитов не суммируются из-за пересечения источников и ограничений GitHub-поиска.
 
-### 2.1 Frontend-разработка (React, TypeScript, Vite)
-**Уровень:** уверенный / сильный
+## Развитие опыта по годам
 
-- Разработка пользовательских интерфейсов на **React 19** с функциональными компонентами и хуками.
-- **TypeScript в строгом режиме** (`tsc --noEmit`, `strict`): строгая типизация props, состояния, ответов API, событий; типобезопасность на всём жизненном цикле проекта.
-- Сборка и dev-сервер на **Vite** (скорый хот-релоад, оптимизированный продакшн-билд).
-- Работа с формами, состоянием компонентов, побочными эффектами (`useEffect`, `useCallback`, `useMemo`), обработкой ошибок и границ (`Error Boundary` подход через try/catch в хуках данных).
-- Подтверждающие коммиты: `feat(router): integrate project-scoped router API v2`, `feat(chat): implement recovery mechanism for transient errors in analysis chat`, `refactor(chat): enhance message submission and cleanup in home workspace`.
+| Год | Основной фокус | Что добавилось в итоговый профиль |
+|---|---|---|
+| [2022](hard_skills_2022.md) | Учебные и командные full-stack проекты | JavaScript ES6+, алгоритмы, Node.js / Express, основы NestJS, REST API, JWT, PostgreSQL / TypeORM, Socket.IO, React / Webpack, Jest |
+| [2023](hard_skills_2023.md) | Клиентские приложения и браузерные API | Next.js / React / TypeScript, адаптивная вёрстка, Redux Toolkit, Formik / Yup, локализация, QR-сканирование и камера, Vercel |
+| [2024](hard_skills_2024.md) | Продуктовый frontend и клиент-серверные приложения | FSD, shared UI и Storybook, формы и дашборды, git submodules, NestJS API, Swagger, загрузка файлов, Telegram Login |
+| [2025](hard_skills_2025.md) | Развитие модульного продукта CityOS | Доменные workspace-модули, общие UI/API-контракты, Ant Design, сложные формы и фильтры, Quill, HLS, локализация, Sentry, релизный процесс |
+| [2026](hard_skills_2026.md) | Микросервисы, AI-интеграции и современный frontend | NestJS gateway, межсервисная авторизация, транзакции и идемпотентность, OpenRouter и чат-боты, React 19 / Next.js 16, TanStack Query, OpenAPI-клиенты, интеграционные и e2e-тесты |
 
-### 2.2 Архитектура приложений (Feature-Sliced Design, FSD)
-**Уровень:** уверенный
+## Итоговый набор навыков
 
-- Организация кода по слоям FSD: `app`, `pages`, `widgets`, `features`, `entities`, `shared`.
-- Соблюдение направления зависимостей между слоями (нижние слои не импортируют верхние), что подтверждается коммитами рефакторинга структуры (`refactor(shared): remove shared→app imports`, `refactor(widgets): move misplaced model/ out of ui/`, `chore(fsd): enforce cross-slice boundaries and run CI on development`).
-- Конфигурация инструментов относится к `app`-слою; корневые файлы только как обязательные entrypoint-обертки.
-- Подтверждающие коммиты: `chore(fsd): enforce cross-slice boundaries...`, `refactor(shared): remove shared→app imports`, `refactor(widgets): move misplaced model/ out of ui/`, `feat(eslint): enforce FSD layer hierarchy`.
+### 1. Языки и основы разработки
 
-### 2.3 Работа с данными и серверным состоянием (TanStack Query / React Query v5)
-**Уровень:** уверенный
+- **TypeScript:** строгая типизация компонентов, состояния, событий, DTO и API-контрактов; интерфейсы, дженерики, strict mode, проверка типов через `tsc`, project references.
+- **JavaScript ES6+:** модули, классы и наследование, работа с объектами и коллекциями, функциональные преобразования данных, рекурсия.
+- **HTML, CSS, Sass / SCSS, CSS Modules:** адаптивная вёрстка, CSS Grid, темы, SVG-иконки и управление переполнением контента.
+- Алгоритмическая практика: строки, массивы, сортировки, вложенные структуры и преобразование данных; учебные задачи Codewars.
 
-- Интеграция `@tanstack/react-query` v5: запросы, мутации, кэширование, инвалидация кэша (`queryClient.invalidateQueries`), оптимистичные обновления (`optimisticUpdate`).
-- Управление жизненным циклом запросов: отмена текущих запросов при размонтировании компонента через `AbortSignal` (`fix(chat): abort in-flight recovery requests`, `fix(api): forward React Query's AbortSignal in analysis query hooks`).
-- Обработка состояний загрузки, ошибок и пустых данных на уровне UI (`TasksSection` с loading/error/empty состояниями).
-- Подтверждающие коммиты: `feat(tasks-panel): useTaskTriggerSync hook with optimistic cache patching`, `fix(chat): abort in-flight recovery requests, not just the retry loop`, `fix(api): forward React Query's AbortSignal in analysis query hooks`, `refactor(chat): enhance query invalidation and processing state management`.
+**Источники:** [2022](hard_skills_2022.md), [2023](hard_skills_2023.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md).
 
-### 2.4 Интернационализация и локализация (i18next)
-**Уровень:** уверенный
+### 2. Frontend: React и Next.js
 
-- Интеграция `i18next` / `react-i18next`: локализация интерфейса, файлы локалей, fallback-покрытие переводов.
-- Добавление украинской языковой локали и интеграция с общим набором поддерживаемых локалей (`SUPPORTED_LOCALES`).
-- Подтверждающие коммиты: `feat(i18n): add Ukrainian language support and update locale files`, `fix(i18n): complete role/task translation fallback coverage`, `merge main: add uk locale, integrate with shared SUPPORTED_LOCALES`.
+- **React 18–19:** функциональные компоненты, собственные хуки, управление состоянием и побочными эффектами, очистка ресурсов при размонтировании.
+- **Next.js 13–14 и 16:** маршрутизация, layout-компоненты, метаданные, страницы ошибок; App Router и серверный рендеринг описаны в материалах 2024 года и self-проектов.
+- **React Router**, включая v7 в EdWin: клиентская навигация и маршруты в контексте проекта.
+- Административные и клиентские интерфейсы: таблицы, динамические списки, вкладки, модальные окна, drawers, каскадные селекты, формы создания и редактирования.
+- Обработка загрузки, пустых данных, ошибок и статусов; управление доступностью действий и адаптация интерфейса для мобильных устройств.
+- Оптимизация рендера через `React.memo`, `useMemo`, `useCallback`, работа с `forwardRef`, декомпозиция компонентов и упрощение DOM.
 
-### 2.5 Тестирование (Vitest + Testing Library)
-**Уровень:** уверенный
+**Источники:** [2023](hard_skills_2023.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), прежний анализ EdWin.
 
-- Юнит-тестирование React-компонентов и хуков с **Vitest** + `@testing-library/react` и `@testing-library/user-event`.
-- Написание моков для хуков (`useChatComposerAttachments`, mocked hooks), стабилизация тестов (`test(chat-output-panel): stabilize mocked hook tests`).
-- Покрытие кода тестами (`vitest --coverage`, `@vitest/coverage-v8`), запуск тестов в pre-push хуке и в CI.
-- Подтверждающие коммиты: `test(chat-output-panel): stabilize mocked hook tests`, `test(toast): align close-button aria expectation`, `feat(chat): add mock for useChatComposerAttachments in tests`, `refactor(tests): streamline test setup and mocking for analysis chat and workspace controller`.
+### 3. Архитектура и организация кода
 
-### 2.6 Качество кода, линтинг и CI/CD
-**Уровень:** уверенный
+- **Feature-Sliced Design:** слои `app`, `pages`, `widgets`, `features`, `entities`, `shared`; разделение UI и модели, выделение хуков, устранение нарушений направления зависимостей.
+- **Модульный frontend:** независимые доменные модули, общие UI-компоненты, типы, API-контракты, словари и public API.
+- **Монорепозитории и композиционные репозитории:** workspace-пакеты, зависимости `workspace:*`, Git submodules, path aliases и интеграция подпроектов.
+- Архитектурный линтинг: `eslint-plugin-boundaries`, FSD-правила и контроль импортов.
+- Серверная декомпозиция: controller/service/repository, NestJS-модули, выделение gateway, чатов, уведомлений и LLM-сервисов.
+- Документирование архитектуры, интеграционных контрактов и планов миграции; аудит соответствия клиентских и серверных возможностей.
 
-- **ESLint 9** + `typescript-eslint` + `eslint-plugin-react-hooks` + `eslint-plugin-import`: строгий линтинг, автоисправление, импорт-резолвинг TypeScript.
-- **Stylelint** + `stylelint-config-standard-scss` + `stylelint-scss`: контроль SCSS/стилей, порядок свойств.
-- **Husky 9** с pre-commit (`lint && lint:styles`) и pre-push (`test:run`) хуками.
-- **GitHub Actions CI** (`ci.yml`): typecheck, ESLint, Stylelint, unit-тесты, продакшн-билд Vite, сборка Storybook на `push`/`pull_request` в ветки `main` и `development`.
-- Подтверждающие коммиты: `feat(eslint): enforce FSD layer hierarchy`, `chore(tooling): node engines, pre-commit + pre-push hooks, GitHub Actions CI`, `f2995c7 chore(husky): make hook scripts executable`.
+**Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md), прежний анализ EdWin.
 
-### 2.7 Дизайн-система и UI-разработка (SCSS, CSS Modules, Storybook, Figma)
-**Уровень:** уверенный
+### 4. Данные на клиенте, формы и локализация
 
-- Стилизация на **SCSS + CSS Modules**, дизайн-токены (цвета, типографика, отступы, радиусы, эффекты), перенесённые из Figma.
-- Базовые UI-примитивы (`Text`, `Button`, `Card`, `Icon`) в слое `shared/ui`, построение интерфейса от токенов, а не от разрозненных значений.
-- Компактная типографическая шкала, адаптивная вёрстка, обработка overflow, выравнивание, иконки (SVG).
-- **Storybook** для изолированной разработки UI-компонентов и historias под разные размеры экранов (`build-storybook` в CI).
-- Подтверждающие коммиты: `style(chat-widget): remove redundant text color styles from message cards`, `feat(typography): introduce compact UI typography scale for shell components`, `docs: resolve self-contradictions, document tokens, stack, entities gap`, `Update design system and foundational styles; restore Figma access and integrate design tokens`.
+- **TanStack Query / React Query v5:** запросы, мутации, кэширование, инвалидация и оптимистичные обновления; отмена запросов через `AbortSignal`.
+- **Redux / Redux Toolkit**, React Context и локальное состояние; контекстное кэширование справочников и организаций.
+- **Axios**, общие HTTP-клиенты, обработка ошибок и синхронизация данных после изменений.
+- **OpenAPI:** генерация типизированных клиентов через `@hey-api/openapi-ts`, согласование типов и форматов ответов с backend.
+- Формы и валидация: **Formik / Yup**, проверка обязательных полей, дат, IP-адресов и бизнес-правил; фильтрация, сортировка, пагинация и параметры списков.
+- Работа с часовыми поясами и UTC offset; восстановление после временных ошибок и предотвращение гонок при асинхронных операциях.
+- **i18next, react-i18next, next-i18next:** файлы локалей, переключение языков, fallback-переводы, локализация ошибок, статусов и уведомлений.
 
-### 2.8 Роутинг и навигация (React Router DOM v7)
-**Уровень:** уверенный
+**Источники:** [2023](hard_skills_2023.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), прежний анализ EdWin.
 
-- Клиентский роутинг на `react-router-dom` v7, project-scoped роуты, интеграция с router API v2.
-- Синхронизация фронтенда с контрактом роутер-API, обработка навигации и состояний страниц.
-- Подтверждающие коммиты: `feat(router): integrate project-scoped router API v2`, `fix(router): align frontend with current router API contract`.
+### 5. Дизайн-системы и контент
 
-### 2.9 Интеграция с бэкендом и генерация API-клиента (OpenAPI)
-**Уровень:** уверенный
+- Разработка shared UI: кнопки, карточки, типографика, иконки, таблицы, селекты, date picker, пагинация и медиа-компоненты.
+- **Ant Design 5–6**, адаптация компонентов к продуктовой дизайн-системе; **Tailwind CSS 4** в self-проекте Twitch-бота.
+- Дизайн-токены из **Figma**: цвета, типографика, отступы, радиусы и эффекты; темы и единообразные стили компонентов.
+- **Storybook:** изолированная разработка, описание состояний компонентов и вариантов для разных размеров экрана; **Chromatic** для визуальной проверки.
+- Rich-text-контент на **Quill / react-quill-new**, отображение Markdown / GFM, загрузка и предпросмотр изображений и видео.
+- Санитизация HTML и пользовательских URL, корректное отображение контента и управление прокруткой.
 
-- Генерация типизированного API-клиента из OpenAPI-спецификации через `@hey-api/openapi-ts` (`npm run api:generate`).
-- Строгая типизация ответов API, извлечение данных из ответов, обработка структуры ответов.
-- Работа с переменными окружения (`VITE_API_BASE_URL`, строгая валидация при старте).
-- Подтверждающие коммиты: `feat(shared/api): iter-0 foundation — новые типы, API-клиенты, hooks`, `fix(config): strict env validation on boot`, `Refactor API response handling to improve data extraction`.
+**Источники:** [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md), прежний анализ EdWin.
 
-### 2.10 Мониторинг и отслеживание ошибок (Sentry)
-**Уровень:** базовый / средний
+### 6. Backend и API
 
-- Интеграция `@sentry/react` v10: отслеживание ошибок на фронтенде, Sentry breadcrumbs для отладки потоков анализа.
-- Подтверждающий коммит: `feat(iter-5): terminal banner, confirm dialog, history, parseRetryAfter, Sentry breadcrumbs, i18n cleanup`.
+- **Node.js, Express, NestJS 10–11:** HTTP-маршруты, модули, контроллеры, сервисы, DTO, CRUD, фильтрация и пагинация.
+- Валидация через **express-validator**, **class-validator / class-transformer**; централизованная обработка ошибок и HTTP-статусов.
+- **REST API, Swagger / OpenAPI:** описание контрактов, клиент-серверная интеграция и обновление спецификаций.
+- **API Gateway / reverse proxy:** проксирование клиентских и межсервисных запросов, передача JWT, очистка служебных заголовков, сохранение HTTP-статусов.
+- **Multipart / FormData:** загрузка файлов и изображений, ограничения размера, асинхронная обработка и callback-контракты.
+- Конфигурация через env / YAML, проверка обязательных параметров при старте, логирование, health endpoints и самостоятельные сборки сервисов.
 
-### 2.11 Аутентификация, безопасность и сессии
-**Уровень:** уверенный
+**Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2026](hard_skills_2026.md).
 
-- Поток аутентификации: страницы входа/регистрации, управление сессией, email-верификация.
-- Защита сессий (`fix(auth): harden session guard and production config`), отмена операций после размонтирования компонента (no post-unmount writes).
-- Санитизация пользовательских данных (URL персоны как CSS background), защита от race conditions при загрузке файлов и топиков.
-- Подтверждающие коммиты: `fix(auth): harden session guard and production config`, `fix(chat): don't attach analysis recovery to a wrong session`, `fix(persona): sanitize persona image URL used as CSS background`, `fix(api): return uploaded file from the store response (no racy re-list)`.
+### 7. Базы данных и надёжность обработки
 
-### 2.12 DevOps и инфраструктура (Docker, Node.js, npm)
-**Уровень:** базовый / средний
+- **PostgreSQL, TypeORM:** сущности, репозитории, связи, внешние ключи, каскадное удаление, создание и выполнение миграций, откат миграций.
+- Моделирование пользователей, чатов, сообщений, настроек ботов, уведомлений и получателей; ограничения уникальности и статусные переходы.
+- Транзакции, идемпотентные callback-операции, `INSERT … ON CONFLICT` для конкурентной обработки данных.
+- Пагинация истории сообщений, дедупликация и хранение признаков удаления сообщений.
+- Миграция приложения с **Prisma на TypeORM**; настройка подключения к PostgreSQL и отображение состояния БД.
+- **SQLite** (`better-sqlite3`, `sql.js`) и **Testcontainers PostgreSQL** для тестового окружения.
 
-- Написание `Dockerfile` и `.dockerignore` с поддержкой переменных окружения, `docker-compose.yml` для контейнеризации приложения.
-- Требуемое окружение: Node.js ≥ 22.13, npm ≥ 10 (закреплено в `engines` и `.nvmrc`).
-- Подтверждающие коммиты: `feat(docker): add Dockerfile and .dockerignore for containerization`, `feat(docker): enhance Dockerfile with environment variable support`, `refactor(docker): update container configuration in docker-compose.yml`.
+**Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md).
 
-### 2.13 AI-агенты и автоматизация разработки (OpenCode)
-**Уровень:** базовый / средний
+### 8. Аутентификация и защита интеграций
 
-- Настройка конфигурации AI-агентов OpenCode (free-first конфигурация агентов) в репозитории `giga-monorepo`.
-- Подтверждающий коммит: `feat: add free-first OpenCode agent configuration` (2026-10-16).
+- **JWT**, хеширование паролей через **bcrypt / bcryptjs**, роли и проверки доступа, защищённые маршруты и управление сессией на клиенте.
+- **Twitch OAuth:** callback-маршруты, проверка токенов и cookie-based state; **Telegram Login**.
+- NestJS guards и декораторы для разделения пользовательских и межсервисных запросов, `X-Service-Auth`, сравнение сервисного секрета за постоянное время.
+- Защита proxy-маршрутов, отказ от небезопасных fallback-механизмов авторизации, проверка конфигурации при запуске.
+- Санитизация контента, очистка ресурсов, предотвращение записи состояния после размонтирования и привязки асинхронного ответа к неверной сессии.
 
-### 2.14 Git, монорепозитории и процессы разработки
-**Уровень:** уверенный
+**Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md), прежний анализ EdWin.
 
-- Работа с git-сабмодулями (`city-monorepo`, `nw-monorepo`) в монорепозитории.
-- Feature-ветки, Pull Requests ( merge PR #11–#45), squash/merge в основные ветки (`main`, `development`).
-- Коммит-сообщения по conventional commits (`feat`, `fix`, `refactor`, `style`, `chore`, `docs`, `test` с scoping, например `feat(chat)`, `fix(api)`).
-- Документирование архитектурных решений, технических спецификаций (Edwin service UI TZ v1.4 → v1.7), аудит покрытия сервер-фронтенд.
-- Подтверждающие коммиты: `Add city-monorepo and nw-monorepo submodules`, `docs(audit): server-to-frontend coverage audit (2026-05-15)`, `docs(plans): add backend relay realignment 6-iteration plan`.
+### 9. LLM, чат-боты, real-time и браузерные интеграции
 
----
+- **LLM / OpenRouter API:** сборка системных и пользовательских промптов, приоритет системных сообщений, контекст и история диалога, проверка настроек модели.
+- Обработка ошибок LLM, отсутствующих ключей и таймаутов; логирование, сохранение ошибок и восстановление запросов.
+- Оркестрация чатов: state machine, таймеры активности и закрытия, передача диалога между агентами и оператором, обработка выбора пользователя.
+- **Telegram Bot API / Telegraf**, **Twitch API / tmi.js:** команды, уведомления, OAuth, приём сообщений, дедупликация и объединение live-сообщений с историей.
+- **WebSocket, Socket.IO, EventEmitter, Centrifuge:** события, комнаты, подписки и relay между сервисами и frontend; проверка типов сообщений.
+- **HLS / hls.js**, MSE-плеер, восстановление воспроизведения после ошибок; интеграционные сценарии HikCentral / go2rtc, видеонаблюдения и домофонии.
+- **MediaDevices, @zxing/browser:** QR-сканирование, выбор камеры через `deviceId` и constraints, управление видеопотоком, остановка ресурсов и обработка ошибок доступа.
 
-## 3. Стек технологий (таблица для резюме)
+**Источники:** [2022](hard_skills_2022.md), [2023](hard_skills_2023.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md).
 
-| Категория | Инструменты / технологии |
-|-----------|--------------------------|
-| Языки | TypeScript (строгий режим), JavaScript (ESM), SCSS |
-| Фреймворк / библиотека UI | React 19, React DOM, React Router DOM v7 |
-| Сборка / dev-сервер | Vite, npm (workspaces/engines) |
-| Архитектура | Feature-Sliced Design (FSD) |
-| Серверное состояние | TanStack Query / React Query v5 |
-| i18n | i18next, react-i18next |
-| Тестирование | Vitest, @testing-library/react, @testing-library/user-event, jsdom |
-| Линтинг / статический анализ | ESLint 9, typescript-eslint, Stylelint, stylelint-scss |
-| Pre-commit / pre-push | Husky 9 |
-| CI/CD | GitHub Actions (typecheck, lint, stylelint, tests, vite build, storybook build) |
-| Мониторинг ошибок | Sentry React SDK v10 |
-| Документирование UI | Storybook 10 |
-| Генерация API-клиента | @hey-api/openapi-ts (OpenAPI) |
-| Контейнеризация | Docker, Dockerfile, docker-compose |
-| Дизайн | Figma, дизайн-токены (цвета, типографика, отступы, радиусы, эффекты) |
-| AI / автоматизация | OpenCode (конфигурация агентов) |
-| Версии / процессы | Git, git submodules, Conventional Commits, PR workflow |
+### 10. Тестирование, качество и мониторинг
 
----
+- **Jest, ts-jest, Vitest:** unit-тесты компонентов, хуков и серверной логики, моки, настройка окружения и стабилизация тестов.
+- **Testing Library, user-event, jsdom:** тестирование пользовательских взаимодействий и React-компонентов.
+- **Supertest:** интеграционные и e2e-проверки контроллеров, guards, загрузки файлов и полного сценария сообщения в чате.
+- Изолированные БД через SQLite и Testcontainers, измерение покрытия через V8, отчёты тестов.
+- **ESLint, typescript-eslint, Prettier, Stylelint:** правила React hooks, импортов, архитектурных границ, SCSS и локализации.
+- **Husky, lint-staged:** проверки перед коммитом и push; TypeScript typecheck.
+- **Sentry:** отслеживание frontend-ошибок, user context, breadcrumbs и tunnel route.
 
-## 4. Ключевые области ответственности (для формулировок в резюме)
+**Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), прежний анализ EdWin.
 
-- Разработка и поддержка frontend-части корпоративного приложения (анализ, чат, сессии, персоны, задачи) на React 19 + TypeScript + Vite по архитектуре FSD.
-- Внедрение и поддержка серверного состояния через TanStack Query v5 с отменой запросов, оптимистичными обновлениями и обработкой состояний загрузки/ошибок.
-- Локализация интерфейса (i18next), включая добавление украинского языка и fallback-переводов.
-- Настройка и поддержка системы качества кода: ESLint, Stylelint, TypeScript strict, Husky хуки, GitHub Actions CI.
-- Написание юнит-тестов (Vitest + Testing Library) и поддержка покрытия кода.
-- Разработка UI по дизайн-токенам из Figma, Storybook-компоненты, адаптивная вёрстка на SCSS/CSS Modules.
-- Интеграция с бэкендом через типизированный OpenAPI-клиент, аутентификация и управление сессиями.
-- Контейнеризация приложения (Docker, docker-compose).
+### 11. Сборка, CI/CD и инструменты разработки
 
----
+- **Vite, Webpack 5**, Next.js build pipeline; development / staging / production-конфигурации, TypeScript и Sass loaders.
+- **Docker, Docker Compose:** Dockerfile, `.dockerignore`, конфигурация сервисов и клиентов, переменные окружения и миграции при запуске.
+- **GitHub Actions:** typecheck, линтинг, тесты, сборка приложения и Storybook на push / pull request; рекурсивный checkout submodules.
+- **Vercel / Netlify:** конфигурация развёртывания и workflows; **Nginx** для SPA fallback в self-проекте.
+- **Git:** feature-ветки, pull requests, merge / squash, синхронизация изменений, обновление submodules, Conventional Commits и релизный процесс.
+- **pnpm / npm:** workspaces, скрипты сборки и проверок, фиксация требований к Node.js; документация окружения и запуска.
+- Настройка **OpenCode** и инструкций **AGENTS.md** для AI-инструментов разработки.
 
-## 5. Статистика коммитов (справочно)
+**Источники:** [2023](hard_skills_2023.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md), прежний анализ EdWin / giga-monorepo.
 
-- **Всего коммитов Станислава:** 187 (100 % analysed истории).
-- **По репозиториям:** `starup` — 185, `giga-monorepo` — 2.
-- **По типам (starup):** `feat` — 41, `fix` — 30, `refactor` — 12, `style` — 7, `chore` — 7, `docs` — 4, `test` — 3.
-- **По месяцам (starup):** май 2026 — 101, июнь 2026 — 5, июль 2026 — 79.
-- **По месяцам (giga-monorepo):** август 2026 — 1, октябрь 2026 — 1.
+## Дополнительный и базовый опыт
 
----
+- **MongoDB:** базовое проектирование структуры в учебных проектах 2022 года.
+- **Prisma:** опыт приложения до миграции на TypeORM; материалы не устанавливают глубину самостоятельной работы с ORM.
+- **Zod, Chart.js / react-chartjs-2, MDXEditor, react-dropzone, react-select, react-datepicker, date-fns, Firebase Admin:** перечислены в конфигурациях и материалах 2024 года; степень практического использования требует отдельного уточнения.
+- **audit-ci:** проверка зависимостей в учебном окружении 2022 года.
 
-*Документ автоматически сформирован на основе истории коммитов каталогов `2026\giga-monorepo` и `2026\starup`. Предназначен для последующего оформления резюме.*
+## Компактная версия для резюме
+
+| Направление | Навыки |
+|---|---|
+| Языки и frontend | TypeScript, JavaScript ES6+, React, Next.js, React Router, HTML/CSS, Sass/SCSS, CSS Modules, Tailwind CSS |
+| Архитектура | Feature-Sliced Design, модульные приложения, shared UI/API, монорепозитории, workspaces, Git submodules |
+| Данные и UI | TanStack Query, Redux Toolkit, Axios, Formik, Yup, Ant Design, Storybook, Chromatic, i18next, Quill |
+| Backend | Node.js, NestJS, Express, REST API, API Gateway, Swagger/OpenAPI, генерация API-клиентов |
+| Базы данных | PostgreSQL, TypeORM, миграции, связи, транзакции, идемпотентная обработка |
+| Авторизация | JWT, bcrypt, OAuth, Telegram Login, роли, guards, межсервисная авторизация |
+| Интеграции | OpenRouter / LLM API, Telegraf, Twitch / tmi.js, WebSocket, Socket.IO, HLS.js, MediaDevices, QR-сканирование |
+| Тестирование и качество | Jest, Vitest, Testing Library, Supertest, Testcontainers, ESLint, Prettier, Stylelint, Husky, Sentry |
+| Сборка и поставка | Vite, Webpack, Docker, Docker Compose, GitHub Actions, Vercel, Netlify, Git, pnpm / npm |
