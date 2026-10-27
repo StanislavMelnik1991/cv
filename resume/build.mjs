@@ -110,17 +110,20 @@ function footer(doc, data, page) {
 }
 
 function firstHeader(doc, data) {
-  // Photograph is clipped without modifying the source image.
-  const photo = { x: W - M - 93, y: 37, size: 93 };
-  doc.save().roundedRect(photo.x, photo.y, photo.size, photo.size, 8).clip()
-    .image(path.join(ROOT, 'StanislauMelnik.jpg'), photo.x, photo.y, { width: photo.size, height: photo.size })
-    .restore();
-  doc.roundedRect(photo.x, photo.y, photo.size, photo.size, 8)
-    .strokeColor(C.rule).lineWidth(0.7).stroke();
+  if (data.showPhoto) {
+    // Photograph is clipped without modifying the source image.
+    const photo = { x: W - M - 93, y: 37, size: 93 };
+    doc.save().roundedRect(photo.x, photo.y, photo.size, photo.size, 8).clip()
+      .image(path.join(ROOT, 'StanislauMelnik.jpg'), photo.x, photo.y, { width: photo.size, height: photo.size })
+      .restore();
+    doc.roundedRect(photo.x, photo.y, photo.size, photo.size, 8)
+      .strokeColor(C.rule).lineWidth(0.7).stroke();
+  }
+  const headingWidth = data.showPhoto ? CW - 107 : CW;
   doc.rect(M, 36, 32, 3).fill(C.accent);
-  drawText(doc, data.name, M, 48, CW - 107, { size: 25, leading: 32, font: 'Bold', color: C.ink });
-  drawText(doc, 'Senior Frontend Developer', M, 87, CW - 107, { size: 12, leading: 16, color: C.accent, font: 'SemiBold' });
-  drawText(doc, 'React  /  Next.js  /  TypeScript', M, 109, CW - 107, { size: 9.4, leading: 13, color: C.muted });
+  drawText(doc, data.name, M, 48, headingWidth, { size: 25, leading: 32, font: 'Bold', color: C.ink });
+  drawText(doc, 'Senior Frontend Developer', M, 87, headingWidth, { size: 12, leading: 16, color: C.accent, font: 'SemiBold' });
+  drawText(doc, 'React  /  Next.js  /  TypeScript', M, 109, headingWidth, { size: 9.4, leading: 13, color: C.muted });
   const contactY = 143;
   const contacts = [
     { text: 'stanislavmelnik@gmail.com', x: M, link: 'mailto:stanislavmelnik@gmail.com' },
@@ -203,8 +206,6 @@ async function build(lang, data) {
   y = job(doc, data.comdev, y);
   y = section(doc, data.labels.projects, y);
   for (const project of data.projects) y = job(doc, project, y);
-  y += 3;
-  for (const text of data.smallerProjects) y = drawText(doc, text, M, y, CW, { size: 9.1, leading: 12.6 }) + 6;
   y = section(doc, data.labels.skills, y);
   for (const [label, text] of data.skills) {
     const end = drawText(doc, text, M + 90, y, CW - 90, { size: 9.0, leading: 12.5 });
