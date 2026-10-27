@@ -1,8 +1,8 @@
 # Hard skills — итоговый профиль за 2022–2026
 
-**Дата обновления:** 26.10.2026. Данные за 2026 год охватывают период по эту дату.
+**Дата обновления:** 27.10.2026. GitHub-анализ за 2026 год охватывает период по 26.10.2026; фактические уточнения из предоставленного ревью добавлены 27.10.2026.
 
-Основное направление — full-stack разработка на TypeScript: React / Next.js на клиенте, Node.js / NestJS на сервере. Опыт включает модульные продуктовые интерфейсы, дизайн-системы, REST API и микросервисы, PostgreSQL, real-time и медиа, интеграции LLM и чат-ботов.
+Основное направление — full-stack разработка на TypeScript: React / Next.js на клиенте, Node.js / NestJS / Fastify на сервере. Опыт включает модульные продуктовые интерфейсы, дизайн-системы, REST API и микросервисы, PostgreSQL, real-time и медиа, коммерческие интеграции LLM и чат-ботов.
 
 ## Источники и принцип объединения
 
@@ -20,7 +20,7 @@
 | [2023](hard_skills_2023.md) | Клиентские приложения и браузерные API | Next.js / React / TypeScript, адаптивная вёрстка, Redux Toolkit, Formik / Yup, локализация, QR-сканирование и камера, Vercel |
 | [2024](hard_skills_2024.md) | Продуктовый frontend и клиент-серверные приложения | FSD, shared UI и Storybook, формы и дашборды, git submodules, NestJS API, Swagger, загрузка файлов, Telegram Login |
 | [2025](hard_skills_2025.md) | Развитие модульного продукта CityOS | Доменные workspace-модули, общие UI/API-контракты, Ant Design, сложные формы и фильтры, Quill, HLS, локализация, Sentry, релизный процесс |
-| [2026](hard_skills_2026.md) | Микросервисы, AI-интеграции и современный frontend | NestJS gateway, межсервисная авторизация, транзакции и идемпотентность, OpenRouter и чат-боты, React 19 / Next.js 16, TanStack Query, OpenAPI-клиенты, интеграционные и e2e-тесты |
+| [2026](hard_skills_2026.md) | Микросервисы, AI-интеграции и современный frontend | NestJS gateway и чат-бот, Fastify / Zod для уведомлений, межсервисная авторизация, транзакции и идемпотентность, коммерческие OpenRouter / Telegraf, React 19 / Next.js 16, TanStack Query, OpenAPI-клиенты, интеграционные и e2e-тесты |
 
 ## Итоговый набор навыков
 
@@ -48,9 +48,10 @@
 
 - **Feature-Sliced Design:** слои `app`, `pages`, `widgets`, `features`, `entities`, `shared`; разделение UI и модели, выделение хуков, устранение нарушений направления зависимостей.
 - **Модульный frontend:** независимые доменные модули, общие UI-компоненты, типы, API-контракты, словари и public API.
+- Платформа из 30+ модулей для сборки приложений CityOS, North Waterfront и SunBridge; состав приложений различается. Nuanu входит в перечень внедрений платформы, но не используется для подтверждения переиспользования всего набора модулей.
 - **Монорепозитории и композиционные репозитории:** workspace-пакеты, зависимости `workspace:*`, Git submodules, path aliases и интеграция подпроектов.
 - Архитектурный линтинг: `eslint-plugin-boundaries`, FSD-правила и контроль импортов.
-- Серверная декомпозиция: controller/service/repository, NestJS-модули, выделение gateway, чатов, уведомлений и LLM-сервисов.
+- Серверная декомпозиция: controller/service/repository, NestJS-модули, выделение бизнес-логики чатов из gateway в отдельный микросервис; сервис уведомлений на Fastify.
 - Документирование архитектуры, интеграционных контрактов и планов миграции; аудит соответствия клиентских и серверных возможностей.
 
 **Источники:** [2022](hard_skills_2022.md), [2024](hard_skills_2024.md), [2025](hard_skills_2025.md), [2026](hard_skills_2026.md), [self-проекты](hard_skills_selfprojects.md), прежний анализ EdWin.
@@ -81,6 +82,7 @@
 ### 6. Backend и API
 
 - **Node.js, Express, NestJS 10–11:** HTTP-маршруты, модули, контроллеры, сервисы, DTO, CRUD, фильтрация и пагинация.
+- **Fastify / Zod:** коммерческий сервис уведомлений, валидация, разбор PDF и асинхронная обработка.
 - Валидация через **express-validator**, **class-validator / class-transformer**; централизованная обработка ошибок и HTTP-статусов.
 - **REST API, Swagger / OpenAPI:** описание контрактов, клиент-серверная интеграция и обновление спецификаций.
 - **API Gateway / reverse proxy:** проксирование клиентских и межсервисных запросов, передача JWT, очистка служебных заголовков, сохранение HTTP-статусов.
@@ -112,10 +114,10 @@
 
 ### 9. LLM, чат-боты, real-time и браузерные интеграции
 
-- **LLM / OpenRouter API:** сборка системных и пользовательских промптов, приоритет системных сообщений, контекст и история диалога, проверка настроек модели.
+- **LLM / OpenRouter API:** коммерческий сервис CityOS chat-bot и личные проекты; сборка системных и пользовательских промптов, приоритет системных сообщений, контекст и история диалога, проверка настроек модели.
 - Обработка ошибок LLM, отсутствующих ключей и таймаутов; логирование, сохранение ошибок и восстановление запросов.
 - Оркестрация чатов: state machine, таймеры активности и закрытия, передача диалога между агентами и оператором, обработка выбора пользователя.
-- **Telegram Bot API / Telegraf**, **Twitch API / tmi.js:** команды, уведомления, OAuth, приём сообщений, дедупликация и объединение live-сообщений с историей.
+- **Telegram Bot API / Telegraf:** коммерческий адаптер CityOS chat-bot и личные проекты. **Twitch API / tmi.js:** команды, уведомления, OAuth, приём сообщений, дедупликация и объединение live-сообщений с историей в личных проектах.
 - **WebSocket, Socket.IO, EventEmitter, Centrifuge:** события, комнаты, подписки и relay между сервисами и frontend; проверка типов сообщений.
 - **HLS / hls.js**, MSE-плеер, восстановление воспроизведения после ошибок; интеграционные сценарии HikCentral / go2rtc, видеонаблюдения и домофонии.
 - **MediaDevices, @zxing/browser:** QR-сканирование, выбор камеры через `deviceId` и constraints, управление видеопотоком, остановка ресурсов и обработка ошибок доступа.
@@ -139,6 +141,7 @@
 - **Vite, Webpack 5**, Next.js build pipeline; development / staging / production-конфигурации, TypeScript и Sass loaders.
 - **Docker, Docker Compose:** Dockerfile, `.dockerignore`, конфигурация сервисов и клиентов, переменные окружения и миграции при запуске.
 - **GitHub Actions:** typecheck, линтинг, тесты, сборка приложения и Storybook на push / pull request; рекурсивный checkout submodules.
+- Репозитории интеграции приложений и сервисов North Waterfront и CityOS (`city-monorepo`); локальный запуск стека North Waterfront через Docker Compose.
 - **Vercel / Netlify:** конфигурация развёртывания и workflows; **Nginx** для SPA fallback в self-проекте.
 - **Git:** feature-ветки, pull requests, merge / squash, синхронизация изменений, обновление submodules, Conventional Commits и релизный процесс.
 - **pnpm / npm:** workspaces, скрипты сборки и проверок, фиксация требований к Node.js; документация окружения и запуска.
@@ -150,7 +153,7 @@
 
 - **MongoDB:** базовое проектирование структуры в учебных проектах 2022 года.
 - **Prisma:** опыт приложения до миграции на TypeORM; материалы не устанавливают глубину самостоятельной работы с ORM.
-- **Zod, Chart.js / react-chartjs-2, MDXEditor, react-dropzone, react-select, react-datepicker, date-fns, Firebase Admin:** перечислены в конфигурациях и материалах 2024 года; степень практического использования требует отдельного уточнения.
+- **Chart.js / react-chartjs-2, MDXEditor, react-dropzone, react-select, react-datepicker, date-fns, Firebase Admin:** перечислены в конфигурациях и материалах 2024 года; степень практического использования требует отдельного уточнения. Применение Zod в сервисе уведомлений описано в разделе Backend и API.
 - **audit-ci:** проверка зависимостей в учебном окружении 2022 года.
 
 ## Компактная версия для резюме
@@ -160,7 +163,7 @@
 | Языки и frontend | TypeScript, JavaScript ES6+, React, Next.js, React Router, HTML/CSS, Sass/SCSS, CSS Modules, Tailwind CSS |
 | Архитектура | Feature-Sliced Design, модульные приложения, shared UI/API, монорепозитории, workspaces, Git submodules |
 | Данные и UI | TanStack Query, Redux Toolkit, Axios, Formik, Yup, Ant Design, Storybook, Chromatic, i18next, Quill |
-| Backend | Node.js, NestJS, Express, REST API, API Gateway, Swagger/OpenAPI, генерация API-клиентов |
+| Backend | Node.js, NestJS, Fastify, Zod, Express, REST API, API Gateway, Swagger/OpenAPI, генерация API-клиентов |
 | Базы данных | PostgreSQL, TypeORM, миграции, связи, транзакции, идемпотентная обработка |
 | Авторизация | JWT, bcrypt, OAuth, Telegram Login, роли, guards, межсервисная авторизация |
 | Интеграции | OpenRouter / LLM API, Telegraf, Twitch / tmi.js, WebSocket, Socket.IO, HLS.js, MediaDevices, QR-сканирование |

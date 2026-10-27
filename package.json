@@ -1,0 +1,15 @@
+{
+  "name": "stanislau-melnik-resume",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:pdf": "node resume/build.mjs"
+  },
+  "devDependencies": {
+    "pdfkit": "0.17.2"
+  }
+}
