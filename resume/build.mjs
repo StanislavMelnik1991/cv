@@ -104,7 +104,7 @@ function job(doc, entry, y, options = {}) {
 function footer(doc, data, page) {
   rule(doc, H - 35);
   doc.font('Regular').fontSize(7.6).fillColor(C.muted)
-    .text('STANISLAU MELNIK  /  ' + data.labels.footer, M, H - 26, { lineBreak: false });
+    .text(data.name.toLocaleUpperCase(data.language) + '  /  ' + data.labels.footer, M, H - 26, { lineBreak: false });
   doc.font('SemiBold').fontSize(8).fillColor(C.accent)
     .text(page + ' / 2', W - M - 32, H - 27, { lineBreak: false });
 }
