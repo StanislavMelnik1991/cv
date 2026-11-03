@@ -1,4 +1,24 @@
+# Dependencies and local package-manager cache
 node_modules/
+.pnpm-store/
+
+# Local environment, credentials, and uploads
+.env
+.env.*
+!.env.example
+!.env.template
 .uploads/
 .config/
-.env
+/custom_files/
+
+# Private job-search records and browser artifacts
+/job-search/
+/.playwright-mcp/
+
+# Logs and local editor/OS files
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
