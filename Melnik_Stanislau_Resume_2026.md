@@ -12,7 +12,7 @@
 
 Frontend-разработчик с **4+ годами коммерческого опыта** в React, Next.js и TypeScript. Спроектировал с нуля frontend-платформу из **30+ модулей**. Приложения CityOS, North Waterfront и SunBridge собираются из общих модулей в отдельных репозиториях.
 
-Основной опыт — сложные B2B-интерфейсы и клиентские порталы: frontend-архитектура, общая UI-библиотека, real-time-функции и надёжность релизов. Согласую API-контракты и планы внедрения с backend-командой, выстраиваю автоматические проверки качества. Дополнительно разрабатываю backend-сервисы на NestJS и Fastify, коммерческие интеграции LLM / OpenRouter и Telegram.
+Основной опыт — сложные B2B-интерфейсы и клиентские порталы: frontend-архитектура, общая UI-библиотека, real-time-функции и надёжность релизов. Согласую API-контракты и планы внедрения с backend-командой, выстраиваю автоматические проверки качества. Дополнительно разрабатываю backend-сервисы на NestJS, коммерческие интеграции LLM / OpenRouter и Telegram.
 
 ---
 
@@ -37,9 +37,9 @@ Frontend-разработчик с **4+ годами коммерческого 
 - В North Waterfront реализовал просмотр камер через HLS / RTSP и go2rtc, интерфейсы домофонов и удалённого открытия дверей. Добавил валидацию параметров HLS-прокси для защиты от SSRF.
 - Реализовал авторизацию, новости, базу знаний, настройки и постаматы в North Waterfront. Настроил развёртывание раздела «Безопасность» через Docker Compose с web-приложением и go2rtc.
 
-**Backend и интеграции** · NestJS, Fastify, TypeORM, PostgreSQL · 2026
+**Backend и интеграции** · NestJS, TypeORM, PostgreSQL · 2026
 
-- Участвовал в разработке API gateway и чат-бота на NestJS, сервиса уведомлений на Fastify: проксирование, валидация и загрузка файлов.
+- Участвовал в разработке API gateway и чат-бота на NestJS: проксирование, валидация и загрузка файлов.
 - **Реализовал LLM-сервис на OpenRouter и Telegram-адаптер на Telegraf.** Выделил бизнес-логику чатов из gateway в отдельный микросервис; разделил пользовательскую JWT-авторизацию и межсервисный доступ.
 - Работал с миграциями, транзакциями и идемпотентной обработкой callback-запросов; писал интеграционные и серверные e2e-тесты на Jest / Supertest.
 
@@ -92,7 +92,7 @@ AI-сервис аналитики с чат-интерфейсом. Разра�
 | Вёрстка и локализация | HTML, CSS, Sass/SCSS, CSS Modules, Tailwind CSS, адаптивная вёрстка, Figma, i18next, SEO |
 | Real-time и интеграции | WebSocket, Centrifugo, HLS, go2rtc, REST / OpenAPI, генерация API-клиентов, LLM API / OpenRouter, Telegram / Telegraf |
 | Тестирование | Jest, Vitest, Testing Library, Storybook, Chromatic; серверные интеграционные и e2e-тесты: Supertest, Testcontainers |
-| Backend | Node.js, NestJS, Fastify, Express, PostgreSQL, TypeORM, JWT, OAuth |
+| Backend | Node.js, NestJS, Express, PostgreSQL, TypeORM, JWT, OAuth |
 | Поставка и мониторинг | Git, Docker, Docker Compose, Nginx, GitHub Actions, Sentry, Vite, Webpack |
 
 ---
