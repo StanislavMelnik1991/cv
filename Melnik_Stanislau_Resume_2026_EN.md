@@ -12,7 +12,7 @@ Open to remote, hybrid, or on-site work; willing to relocate and travel.
 
 Frontend engineer with **4+ years of professional experience** building applications with React, Next.js, and TypeScript. Designed a frontend platform from scratch with **30+ modules**. CityOS, North Waterfront, and SunBridge applications are assembled from shared modules in separate repositories.
 
-Focused on complex B2B applications and customer portals: frontend architecture, shared UI libraries, real-time features, and release reliability. Define API contracts and implementation plans with the backend team and establish automated quality checks. Also develop NestJS and Fastify backend services and commercial LLM / OpenRouter and Telegram integrations.
+Focused on complex B2B applications and customer portals: frontend architecture, shared UI libraries, real-time features, and release reliability. Define API contracts and implementation plans with the backend team and establish automated quality checks. Also develop NestJS backend services and commercial LLM / OpenRouter and Telegram integrations.
 
 ---
 
@@ -37,9 +37,9 @@ Property management platform with an admin application for staff, a resident por
 - Implemented camera streaming with HLS / RTSP and go2rtc, intercom interfaces, and remote door unlocking in North Waterfront. Added HLS proxy parameter validation to mitigate SSRF.
 - Implemented authentication, news, a knowledge base, settings, and parcel lockers in North Waterfront. Configured Docker Compose deployment for the Security section with the web application and go2rtc.
 
-**Backend and integrations** · NestJS, Fastify, TypeORM, PostgreSQL · 2026
+**Backend and integrations** · NestJS, TypeORM, PostgreSQL · 2026
 
-- Contributed to the NestJS API gateway and chatbot and the Fastify notification service: proxying, validation, and file uploads.
+- Contributed to the NestJS API gateway and chatbot: proxying, validation, and file uploads.
 - **Built an OpenRouter LLM service and a Telegram adapter with Telegraf.** Extracted chat business logic from the gateway into a separate microservice; separated user JWT authentication from service-to-service access.
 - Worked with migrations, transactions, and idempotent callbacks; wrote integration and backend end-to-end tests with Jest / Supertest.
 
@@ -92,7 +92,7 @@ Started with a Next.js prototype in March 2026; have been developing the platfor
 | Styling and localization | HTML, CSS, Sass/SCSS, CSS Modules, Tailwind CSS, responsive layouts, Figma, i18next, SEO |
 | Real-time and integrations | WebSocket, Centrifugo, HLS, go2rtc, REST / OpenAPI, API client generation, LLM APIs / OpenRouter, Telegram / Telegraf |
 | Testing | Jest, Vitest, Testing Library, Storybook, Chromatic; backend integration and end-to-end tests: Supertest, Testcontainers |
-| Backend | Node.js, NestJS, Fastify, Express, PostgreSQL, TypeORM, JWT, OAuth |
+| Backend | Node.js, NestJS, Express, PostgreSQL, TypeORM, JWT, OAuth |
 | Delivery and monitoring | Git, Docker, Docker Compose, Nginx, GitHub Actions, Sentry, Vite, Webpack |
 
 ---
