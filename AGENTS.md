@@ -9,7 +9,7 @@ This repository maintains bilingual résumés and evidence-backed skills summari
 - `skills/`: consolidated `hard_skills.md`, dated analyses, and `confirmations.md` for verified clarifications and limits of experience.
 - `resume/content.mjs`: PDF variant registry; `resume/content/frontend.mjs` and `resume/content/ai-first.mjs`: curated bilingual PDF text; `resume/build.mjs`: shared PDFKit layout and validation.
 - `resume/fonts/`: bundled Noto Sans fonts and license; `assets/StanislauMelnik.jpg`: source photograph.
-- `pdf/frontend/`, `pdf/ai-first/`: generated two-page résumés. `resume/previews/ai-first/` contains review images of the new pages.
+- `pdf/frontend/`, `pdf/ai-first/`: generated two-page résumés. `resume/previews/frontend/` and `resume/previews/ai-first/` contain page images for review.
 - Root `README.md`: entry point and links. Local `job-search/` and `.playwright-mcp/` contain private research, application records, and browser artifacts.
 
 ## Vacancy Monitoring & Account Access
