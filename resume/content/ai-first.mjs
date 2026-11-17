@@ -3,8 +3,8 @@
 export const aiFirstResumes = {
   ru: {
     language: 'ru-RU',
-    filename: 'ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf',
-    source: 'resumes/ai-first/Melnik_Stanislau_Resume_2026_AI_First.md',
+    filename: 'ai-first/ru/Melnik_Stanislau_Resume.pdf',
+    source: 'resumes/ai-first/ru/Melnik_Stanislau_Resume.md',
     name: 'Станислав Мельник',
     headline: 'Ведущий разработчик · Full-stack / AI-first',
     tagline: 'TypeScript  /  NestJS  /  React  /  Claude  /  Codex',
@@ -97,8 +97,8 @@ export const aiFirstResumes = {
   },
   en: {
     language: 'en',
-    filename: 'ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf',
-    source: 'resumes/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.md',
+    filename: 'ai-first/en/Melnik_Stanislau_Resume.pdf',
+    source: 'resumes/ai-first/en/Melnik_Stanislau_Resume.md',
     name: 'Stanislau Melnik',
     headline: 'Lead Developer · Full-stack / AI-first',
     tagline: 'TypeScript  /  NestJS  /  React  /  Claude  /  Codex',

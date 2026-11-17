@@ -6,7 +6,7 @@ import path from 'node:path';
 import { resumes } from './content.mjs';
 
 const ROOT = fileURLToPath(new URL('../', import.meta.url));
-const OUT = path.join(ROOT, 'pdf');
+const OUT = path.join(ROOT, 'resumes');
 const W = 595.28;
 const H = 841.89;
 const M = 42;

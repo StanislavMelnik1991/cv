@@ -3,8 +3,8 @@
 export const frontendResumes = {
   ru: {
     language: 'ru-RU',
-    filename: 'frontend/Melnik_Stanislau_Resume_2026.pdf',
-    source: 'resumes/frontend/Melnik_Stanislau_Resume_2026.md',
+    filename: 'frontend/ru/Melnik_Stanislau_Resume.pdf',
+    source: 'resumes/frontend/ru/Melnik_Stanislau_Resume.md',
     name: 'Станислав Мельник',
     headline: 'Senior Frontend Developer',
     tagline: 'React  /  Next.js  /  TypeScript',
@@ -100,8 +100,8 @@ export const frontendResumes = {
   },
   en: {
     language: 'en',
-    filename: 'frontend/Melnik_Stanislau_Resume_2026_EN.pdf',
-    source: 'resumes/frontend/Melnik_Stanislau_Resume_2026_EN.md',
+    filename: 'frontend/en/Melnik_Stanislau_Resume.pdf',
+    source: 'resumes/frontend/en/Melnik_Stanislau_Resume.md',
     name: 'Stanislau Melnik',
     headline: 'Senior Frontend Developer',
     tagline: 'React  /  Next.js  /  TypeScript',

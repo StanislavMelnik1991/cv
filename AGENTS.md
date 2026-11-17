@@ -4,12 +4,12 @@
 
 This repository maintains bilingual résumés and evidence-backed skills summaries.
 
-- `resumes/frontend/`: original Russian and English frontend sources; `_EN` identifies English.
-- `resumes/ai-first/`: Russian and English lead developer / full-stack / AI-first sources, identified by `_AI_First`.
+- `resumes/frontend/{ru,en}/`: Russian and English frontend résumés; each language folder contains `Melnik_Stanislau_Resume.md` and `Melnik_Stanislau_Resume.pdf`.
+- `resumes/ai-first/{ru,en}/`: Russian and English lead developer / full-stack / AI-first résumés, using the same Markdown and PDF filenames.
 - `skills/`: consolidated `hard_skills.md`, dated analyses, and `confirmations.md` for verified clarifications and limits of experience.
 - `resume/content.mjs`: PDF variant registry; `resume/content/frontend.mjs` and `resume/content/ai-first.mjs`: curated bilingual PDF text; `resume/build.mjs`: shared PDFKit layout and validation.
 - `resume/fonts/`: bundled Noto Sans fonts and license; `assets/StanislauMelnik.jpg`: source photograph.
-- `pdf/frontend/`, `pdf/ai-first/`: generated two-page résumés. `resume/previews/frontend/` and `resume/previews/ai-first/` contain page images for review.
+- PDFs are generated beside their Markdown sources. `resume/previews/frontend/` and `resume/previews/ai-first/` contain page images for review.
 - Root `README.md`: entry point and links. Local `job-search/` and `.playwright-mcp/` contain private research, application records, and browser artifacts.
 
 ## Vacancy Monitoring & Account Access
@@ -39,8 +39,8 @@ Choose the résumé variant and language **before each application**, using the 
 
 | Variant | Use when | Local sources and PDFs | Existing rabota.by résumé |
 | --- | --- | --- | --- |
-| Frontend | The main work is React / Next.js interfaces, UI libraries, frontend architecture, and frontend delivery. | `resumes/frontend/` and `pdf/frontend/`; `_EN` for English. | Russian **Senior Frontend-разработчик (React / Next.js / TypeScript)**, ID **213685095**, [open](https://rabota.by/resume/334a268dff0cbc93670039ed1f494d78447443). |
-| AI-first / Full-stack | The role centers on independent product development, frontend plus backend features, engineering ownership, and the full coding-agent workflow. | `resumes/ai-first/` and `pdf/ai-first/`; `_AI_First_EN` for English. | Russian **Ведущий разработчик (Full-stack / AI-first)**, ID **292147733**, [open](https://rabota.by/resume/039dd9abff1169d2150039ed1f5473686d6e6f). |
+| Frontend | The main work is React / Next.js interfaces, UI libraries, frontend architecture, and frontend delivery. | `resumes/frontend/ru/` and `resumes/frontend/en/`; Markdown and PDF together. | Russian **Senior Frontend-разработчик (React / Next.js / TypeScript)**, ID **213685095**, [open](https://rabota.by/resume/334a268dff0cbc93670039ed1f494d78447443). |
+| AI-first / Full-stack | The role centers on independent product development, frontend plus backend features, engineering ownership, and the full coding-agent workflow. | `resumes/ai-first/ru/` and `resumes/ai-first/en/`; Markdown and PDF together. | Russian **Ведущий разработчик (Full-stack / AI-first)**, ID **292147733**, [open](https://rabota.by/resume/039dd9abff1169d2150039ed1f5473686d6e6f). |
 
 - Follow an explicit user choice. Otherwise select the closest factual match to the role; a mention of AI alone does not require the AI-first version. A variant does not establish unverified Python, advertising, billing, or multi-year backend experience; consult `skills/confirmations.md`.
 - Match the required language of the résumé and attachments. Both listed platform résumés are Russian; the existence of local English files does not establish an English platform version. Verify the actual language rather than inferring it from the job title.
@@ -74,7 +74,7 @@ There is no development server or automated test script. Before builds, check `f
 
 ## Coding Style & Naming Conventions
 
-Follow existing JavaScript ES modules: two-space indentation, single quotes, semicolons, and camelCase functions. No formatter or linter is configured. Preserve existing résumé filenames and use `YYYY-MM-DD` for dated research folders.
+Follow existing JavaScript ES modules: two-space indentation, single quotes, semicolons, and camelCase functions. No formatter or linter is configured. Use `Melnik_Stanislau_Resume.md` and `Melnik_Stanislau_Resume.pdf` inside `resumes/<variant>/<language>/`; the folder identifies the variant and language. Use `YYYY-MM-DD` for dated research folders.
 
 Keep Russian and English facts aligned within each variant. Markdown changes require manual updates to the corresponding `resume/content/*.mjs`; PDF text is not automatically synchronized. Preserve verified dates, titles, and proficiency levels; substantiate new claims. Target-role headlines do not change historical job titles. Commercial backend work dates from 2026, and using the corporate Claude / Codex platform does not establish authorship of that platform.
 
