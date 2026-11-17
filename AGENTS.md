@@ -4,11 +4,13 @@
 
 This repository maintains bilingual résumés and evidence-backed skills summaries.
 
-- Root `Melnik_Stanislau_Resume_2026*.md`: Russian and English source résumés; `_EN` identifies English.
-- `hard_skills.md`: consolidated skills; `hard_skills_YYYY.md` and `hard_skills_selfprojects.md`: supporting analyses.
-- `resume/content.mjs`: curated bilingual PDF text; `resume/build.mjs`: PDFKit layout and validation.
-- `resume/fonts/`: bundled Noto Sans fonts and license; `StanislauMelnik.jpg`: source photograph.
-- `pdf/`: generated résumés. Local `job-search/` and `.playwright-mcp/` contain research, application records, and browser artifacts.
+- `resumes/frontend/`: original Russian and English frontend sources; `_EN` identifies English.
+- `resumes/ai-first/`: Russian and English lead developer / full-stack / AI-first sources, identified by `_AI_First`.
+- `skills/`: consolidated `hard_skills.md`, dated analyses, and `confirmations.md` for verified clarifications and limits of experience.
+- `resume/content.mjs`: PDF variant registry; `resume/content/frontend.mjs` and `resume/content/ai-first.mjs`: curated bilingual PDF text; `resume/build.mjs`: shared PDFKit layout and validation.
+- `resume/fonts/`: bundled Noto Sans fonts and license; `assets/StanislauMelnik.jpg`: source photograph.
+- `pdf/frontend/`, `pdf/ai-first/`: generated two-page résumés. `resume/previews/ai-first/` contains review images of the new pages.
+- Root `README.md`: entry point and links. Local `job-search/` and `.playwright-mcp/` contain private research, application records, and browser artifacts.
 
 ## Vacancy Monitoring & Account Access
 
@@ -31,13 +33,42 @@ Fresh sign-in through a password or linked provider was not tested. Recheck acce
 3. Apply through the method specified in the vacancy: for example, its platform form, email, Telegram, LinkedIn message, or external application form. Use the platform's standard application flow when no specific method is stated.
 4. If the specified contact method is unavailable, prepare the complete message ready for the user to send, following the same vacancy requirements. Give the exact destination from the vacancy as a clickable link or address (for example, the recipient's Telegram profile), plus the subject line and required attachments where applicable. State that the application has not been sent and explain which access is missing. If the destination cannot be established, report that explicitly instead of guessing it.
 
+## Resume Variant Selection
+
+Choose the résumé variant and language **before each application**, using the full vacancy and its instructions. Do not rely on the platform's default or last-used résumé.
+
+| Variant | Use when | Local sources and PDFs | Existing rabota.by résumé |
+| --- | --- | --- | --- |
+| Frontend | The main work is React / Next.js interfaces, UI libraries, frontend architecture, and frontend delivery. | `resumes/frontend/` and `pdf/frontend/`; `_EN` for English. | Russian **Senior Frontend-разработчик (React / Next.js / TypeScript)**, ID **213685095**, [open](https://rabota.by/resume/334a268dff0cbc93670039ed1f494d78447443). |
+| AI-first / Full-stack | The role centers on independent product development, frontend plus backend features, engineering ownership, and the full coding-agent workflow. | `resumes/ai-first/` and `pdf/ai-first/`; `_AI_First_EN` for English. | Russian **Ведущий разработчик (Full-stack / AI-first)**, ID **292147733**, [open](https://rabota.by/resume/039dd9abff1169d2150039ed1f5473686d6e6f). |
+
+- Follow an explicit user choice. Otherwise select the closest factual match to the role; a mention of AI alone does not require the AI-first version. A variant does not establish unverified Python, advertising, billing, or multi-year backend experience; consult `skills/confirmations.md`.
+- Match the required language of the résumé and attachments. Both listed platform résumés are Russian; the existence of local English files does not establish an English platform version. Verify the actual language rather than inferring it from the job title.
+- Immediately before submitting, verify the selected **title and résumé ID** in the form or its available data, and the exact variant/language of any PDF attachment. Send only the intended version.
+- Preserve the other versions. rabota.by shares employment records through the profile; tailor a separate record and its résumé associations when different descriptions are required, rather than overwriting an entry used by another résumé. Keep actual titles and dates unchanged.
+- Check existing applications across **all** résumé variants. Having an unused second résumé, or a global `alreadyApplied: false` flag, is not evidence that no application exists. Inspect the vacancy's negotiation/topic list and associated résumé IDs before sending; do not submit a duplicate just to change variants unless the user explicitly requests it.
+- After submission, verify the delivered application uses the intended résumé ID and that the cover letter arrived. Record the variant, language, ID/hash, submission time, and evidence in ignored local `job-search/` records.
+
+## Confirmed Candidate Availability
+
+The candidate confirmed on **2026-11-03** that he is ready to start a new role **within one week of receiving an offer**.
+
+- Russian: **«Готов приступить к работе в течение недели после получения оффера».**
+- English: **“I can start within one week of receiving an offer.”**
+- Use this fact directly in future applications and screening forms that ask when the candidate can start, unless he updates it. No repeated confirmation is needed.
+- When offered the option **«Сразу / в течение недели»**, select it. This is a relative availability window, not an agreed calendar date.
+
+## Current Vacancy Location Preference
+
+On **2026-11-16**, the candidate asked to **skip roles that require relocation for now**. Apply this preference to future vacancy monitoring and applications until he updates it. Continue considering office / hybrid roles in Minsk and remote roles that can be performed from Minsk; if Belarus hiring is not stated, disclose the candidate's location and ask about eligibility. Do not treat a generic platform warning about applying to another country as an employer relocation requirement when the vacancy itself allows remote work.
+
 ## Build, Test, and Development Commands
 
 Use Node.js 22+ and the pnpm version specified in `package.json`. Run commands from the repository root:
 
 - `pnpm install --frozen-lockfile`: install dependencies using the committed lockfile.
-- `pnpm build:pdf`: regenerate both PDFs; see `resume/README.md` for output names and layout details.
-- `node --check resume/build.mjs` and `node --check resume/content.mjs`: check JavaScript syntax.
+- `pnpm build:pdf`: regenerate all four PDFs; see `resume/README.md` for output names and layout details.
+- `node --check resume/build.mjs`, `node --check resume/content.mjs`, `node --check resume/content/frontend.mjs`, and `node --check resume/content/ai-first.mjs`: check JavaScript syntax.
 
 There is no development server or automated test script. Before builds, check `free -m`; keep Node memory bounded with `NODE_OPTIONS="--max-old-space-size=1536" pnpm build:pdf`.
 
@@ -45,11 +76,11 @@ There is no development server or automated test script. Before builds, check `f
 
 Follow existing JavaScript ES modules: two-space indentation, single quotes, semicolons, and camelCase functions. No formatter or linter is configured. Preserve existing résumé filenames and use `YYYY-MM-DD` for dated research folders.
 
-Keep Russian and English facts aligned. Markdown changes require manual updates to `resume/content.mjs`; PDF text is not automatically synchronized. Preserve verified dates, titles, and proficiency levels; substantiate new claims.
+Keep Russian and English facts aligned within each variant. Markdown changes require manual updates to the corresponding `resume/content/*.mjs`; PDF text is not automatically synchronized. Preserve verified dates, titles, and proficiency levels; substantiate new claims. Target-role headlines do not change historical job titles. Commercial backend work dates from 2026, and using the corporate Claude / Codex platform does not establish authorship of that platform.
 
 ## Testing Guidelines
 
-No test framework or coverage threshold is configured. The PDF build checks expected source entries, font glyphs, and page overflow. After content or layout changes, rebuild and visually inspect both pages of each language. With Poppler installed, use `pdfinfo` to confirm two A4 pages and `pdftotext` to inspect selectable text and Cyrillic rendering. Check contact links manually.
+No test framework or coverage threshold is configured. The PDF build checks expected source entries, font glyphs, and page overflow. After content or shared-layout changes, rebuild and visually inspect both pages of each affected variant and language. With Poppler installed, use `pdfinfo` to confirm two A4 pages and `pdftotext` to inspect selectable text and Cyrillic rendering. Check contacts and PDF metadata so the AI-first edition does not retain a frontend headline or subject. Validate relative links after moving files.
 
 ## Commit & Pull Request Guidelines
 

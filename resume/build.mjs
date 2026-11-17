@@ -114,7 +114,7 @@ function firstHeader(doc, data) {
     // Photograph is clipped without modifying the source image.
     const photo = { x: W - M - 93, y: 37, size: 93 };
     doc.save().roundedRect(photo.x, photo.y, photo.size, photo.size, 8).clip()
-      .image(path.join(ROOT, 'StanislauMelnik.jpg'), photo.x, photo.y, { width: photo.size, height: photo.size })
+      .image(path.join(ROOT, 'assets/StanislauMelnik.jpg'), photo.x, photo.y, { width: photo.size, height: photo.size })
       .restore();
     doc.roundedRect(photo.x, photo.y, photo.size, photo.size, 8)
       .strokeColor(C.rule).lineWidth(0.7).stroke();
@@ -122,8 +122,8 @@ function firstHeader(doc, data) {
   const headingWidth = data.showPhoto ? CW - 107 : CW;
   doc.rect(M, 36, 32, 3).fill(C.accent);
   drawText(doc, data.name, M, 48, headingWidth, { size: 25, leading: 32, font: 'Bold', color: C.ink });
-  drawText(doc, 'Senior Frontend Developer', M, 87, headingWidth, { size: 12, leading: 16, color: C.accent, font: 'SemiBold' });
-  drawText(doc, 'React  /  Next.js  /  TypeScript', M, 109, headingWidth, { size: 9.4, leading: 13, color: C.muted });
+  drawText(doc, data.headline, M, 87, headingWidth, { size: 12, leading: 16, color: C.accent, font: 'SemiBold' });
+  drawText(doc, data.tagline, M, 109, headingWidth, { size: 9.4, leading: 13, color: C.muted });
   const contactY = 143;
   const contacts = [
     { text: 'stanislavmelnik@gmail.com', x: M, link: 'mailto:stanislavmelnik@gmail.com' },
@@ -145,7 +145,7 @@ function secondHeader(doc, data) {
   doc.font('SemiBold').fontSize(11).fillColor(C.ink)
     .text(data.name, M, 48, { lineBreak: false });
   doc.font('Regular').fontSize(8.5).fillColor(C.muted)
-    .text('Senior Frontend Developer', M + 280, 50, { width: CW - 280, align: 'right', lineBreak: false });
+    .text(data.headline, M + 250, 50, { width: CW - 250, align: 'right', lineBreak: false });
   rule(doc, 72);
   return 80;
 }
@@ -161,13 +161,14 @@ async function build(lang, data) {
     if (!source.includes(expected)) throw new Error('Source MD missing expected experience: ' + expected);
   }
   const output = path.join(OUT, data.filename);
+  await mkdir(path.dirname(output), { recursive: true });
   const doc = new PDFDocument({
     size: 'A4', margin: 0, autoFirstPage: false, compress: true,
     info: {
-      Title: data.name + ' — Senior Frontend Developer',
+      Title: data.name + ' — ' + data.headline,
       Author: 'Stanislau Melnik',
-      Subject: 'React, Next.js, TypeScript — Resume 2026',
-      Keywords: 'React, Next.js, TypeScript, NestJS, FSD, PostgreSQL',
+      Subject: data.subject,
+      Keywords: data.keywords,
       Creator: 'Stanislau Melnik · resume/build.mjs',
     },
     lang: data.language,
