@@ -7,7 +7,7 @@
 | Senior Frontend | [Markdown](resumes/frontend/Melnik_Stanislau_Resume_2026.md) | [Markdown](resumes/frontend/Melnik_Stanislau_Resume_2026_EN.md) | [Скачать](pdf/frontend/Melnik_Stanislau_Resume_2026.pdf) | [Download](pdf/frontend/Melnik_Stanislau_Resume_2026_EN.pdf) |
 | Ведущий разработчик · Full-stack / AI-first | [Markdown](resumes/ai-first/Melnik_Stanislau_Resume_2026_AI_First.md) | [Markdown](resumes/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.md) | [Скачать](pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf) | [Download](pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf) |
 
-Frontend-версия раскрывает React / Next.js, сложные интерфейсы, UI-библиотеки и frontend-архитектуру. AI-first-версия раскрывает самостоятельное ведение разработки, полный цикл работы с Claude / Codex, серверные фичи, LLM-интеграции, проверки качества и поставку. Фактические должности, даты и языковые уровни согласованы; коммерческие backend-задачи в новой версии явно датированы 2026 годом.
+Frontend-версия раскрывает самостоятельное ведение frontend CityOS и North Waterfront: React / Next.js, сложные интерфейсы, UI-библиотеки, архитектуру, проверки качества и CI/CD. AI-first-версия раскрывает самостоятельное ведение разработки, полный цикл работы с Claude / Codex, серверные фичи, LLM-интеграции, проверки качества и поставку. Фактические должности, даты и языковые уровни согласованы; коммерческие backend-задачи в обеих версиях явно датированы 2026 годом.
 
 ## Хранение файлов
 

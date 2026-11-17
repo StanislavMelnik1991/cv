@@ -29,9 +29,9 @@ NODE_OPTIONS="--max-old-space-size=1536" pnpm build:pdf
 
 Markdown и PDF-тексты редактируются вручную: автоматической синхронизации нет. После изменения фактов обновляйте соответствующие файлы обоих языков и пересобирайте PDF. PDF — краткая редакция полного Markdown, поэтому некоторые детали опущены для двухстраничного формата.
 
-Frontend-версия сохраняет прежнее позиционирование и содержание. В AI-first-версии вперёд вынесены самостоятельное ведение разработки, корпоративная платформа Claude / Codex, полный агентный цикл, серверный модуль чатов на PHP / Laravel и интеграции. Коммерческий backend явно датирован 2026 годом. Должность CityOS остаётся Frontend Developer; новая шапка обозначает целевую роль.
+Frontend-версия сохраняет позиционирование Senior Frontend Developer и раскрывает самостоятельное ведение frontend CityOS и North Waterfront: архитектуру, реализацию, общие модули, проверки качества и CI/CD для деплоя. Claude / Codex и Laravel-кейс описаны кратко. В AI-first-версии вперёд вынесены самостоятельное ведение разработки, корпоративная платформа Claude / Codex, полный агентный цикл, серверный модуль чатов на PHP / Laravel и интеграции. Коммерческий backend в обеих версиях явно датирован 2026 годом. Должность CityOS остаётся Frontend Developer; шапки обозначают целевые роли.
 
-Сохраняются все работодатели и даты. EdWin — проектный контракт; LLM Integrator и мартовский Twitch-прототип — этапы одного личного проекта. Не добавляются выдуманные метрики ускорения, авторство корпоративной агентной платформы, титул CTO в прежней работе, практический Python / ad-tech / биллинг или уровень английского выше B1. Общие модули и порталы не представляются независимыми разработками с нуля для каждого внедрения. Для поиска и откликов используйте текущие ограничения места работы из [AGENTS.md](../AGENTS.md), даже если более ранний frontend-текст допускает переезд.
+Сохраняются все работодатели и даты. EdWin — проектный контракт; LLM Integrator и мартовский Twitch-прототип — этапы одного личного проекта. Не добавляются выдуманные метрики ускорения, авторство корпоративной агентной платформы, титул CTO в прежней работе, практический Python / ad-tech / биллинг или уровень английского выше B1. Общие модули и порталы не представляются независимыми разработками с нуля для каждого внедрения. Для поиска и откликов используйте текущие ограничения места работы из [AGENTS.md](../AGENTS.md): frontend-версия допускает удалёнку из Минска и офис / гибрид в Минске, AI-first — удалёнку из Минска.
 
 ## Проверка и превью
 
@@ -42,8 +42,13 @@ Frontend-версия сохраняет прежнее позициониров
 ```sh
 pdfinfo pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf
 pdftotext pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf -
+pdftoppm -scale-to 1200 -png pdf/frontend/Melnik_Stanislau_Resume_2026.pdf resume/previews/frontend/ru
+pdftoppm -scale-to 1200 -png pdf/frontend/Melnik_Stanislau_Resume_2026_EN.pdf resume/previews/frontend/en
 pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf resume/previews/ai-first/ru
 pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf resume/previews/ai-first/en
 ```
 
-Проверьте две страницы A4, читаемость кириллицы, выделяемый текст, ссылки контактов и метаданные. Превью новой версии: [RU 1](previews/ai-first/ru-1.png), [RU 2](previews/ai-first/ru-2.png), [EN 1](previews/ai-first/en-1.png), [EN 2](previews/ai-first/en-2.png).
+Проверьте две страницы A4, читаемость кириллицы, выделяемый текст, ссылки контактов и метаданные.
+
+- Frontend: [RU 1](previews/frontend/ru-1.png), [RU 2](previews/frontend/ru-2.png), [EN 1](previews/frontend/en-1.png), [EN 2](previews/frontend/en-2.png).
+- AI-first: [RU 1](previews/ai-first/ru-1.png), [RU 2](previews/ai-first/ru-2.png), [EN 1](previews/ai-first/en-1.png), [EN 2](previews/ai-first/en-2.png).

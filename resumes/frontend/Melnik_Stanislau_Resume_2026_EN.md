@@ -4,15 +4,15 @@
 
 Minsk, Belarus · +375 (44) 733-66-60 · stanislavmelnik@gmail.com · [GitHub: StanislavMelnik1991](https://github.com/StanislavMelnik1991)
 
-Open to remote, hybrid, or on-site work; willing to relocate and travel.
+Remote work from Minsk, or hybrid / on-site work in Minsk. I can start within one week of receiving an offer.
 
 ---
 
 ## Professional Summary
 
-Frontend engineer with **4+ years of professional experience** building applications with React, Next.js, and TypeScript. Designed a frontend platform from scratch with **30+ modules**. CityOS, North Waterfront, and SunBridge applications are assembled from shared modules in separate repositories.
+Frontend engineer with **4+ years of professional experience** building applications with React, Next.js, and TypeScript. As CityOS's **only permanent frontend developer**, independently owned frontend development for the admin application and CityOS / North Waterfront resident portals, from architecture and implementation to automated quality checks and deployment CI/CD.
 
-Focused on complex B2B applications and customer portals: frontend architecture, shared UI libraries, real-time features, and release reliability. Define API contracts and implementation plans with the backend team and establish automated quality checks. Also develop NestJS backend services and commercial LLM / OpenRouter and Telegram integrations.
+Designed a frontend platform from scratch with **30+ shared modules** for CityOS, North Waterfront, and SunBridge applications. Focused on complex B2B interfaces, resident portals, a shared UI library, real-time features, and release reliability. Since 2026, also develop backend features and commercial LLM / OpenRouter and Telegram integrations.
 
 ---
 
@@ -23,9 +23,11 @@ Focused on complex B2B applications and customer portals: frontend architecture,
 
 Property management platform with an admin application for staff, a resident portal, and mobile apps sharing a common backend. Client deployments: CityOS, North Waterfront (Severny Bereg), Nuanu, and SunBridge.
 
+**Owned almost all frontend development for CityOS and North Waterfront:** the admin application, shared modules, and resident portals. Was the only permanent frontend developer, with occasional help from colleagues. Responsible for architecture, implementation, quality checks, deployment CI/CD, and the frontend development lifecycle.
+
 **Modular platform and admin application** · React, TypeScript, Vite, Ant Design
 
-- **Designed and implemented the frontend architecture from scratch.** Client applications are assembled from shared modules in separate repositories, enabling parallel development. Architectural linting enforces Feature-Sliced Design boundaries; modules are integrated through git submodules and workspace packages.
+- **Designed and implemented the frontend architecture from scratch.** CityOS, North Waterfront, and SunBridge applications are assembled from shared modules in separate repositories, reusing UI components, types, and API contracts. Architectural linting enforces Feature-Sliced Design boundaries; modules are integrated through git submodules and workspace packages.
 - **Maintain the shared UI library** used across modules and applications: components, forms, types, and API contracts. Implemented filtering, sorting, pagination, and reference-data caching; handled time zones and permissions in forms. Integrated Quill and media uploads with HTML sanitization for user-generated content.
 - **Built real-time resident chats** with Centrifugo / WebSocket: session history and archives, assignments, unread counters, and permissions. Developed modules for resident requests, residents, staff, communications, and access control.
 - Integrated the interface with the North Waterfront legacy API using typed clients, error handling, and Sentry monitoring. Added recovery from stale-chunk errors after deployment by retaining the last three builds and reloading the application once.
@@ -40,14 +42,15 @@ Property management platform with an admin application for staff, a resident por
 **Backend and integrations** · NestJS, TypeORM, PostgreSQL · 2026
 
 - Contributed to the NestJS API gateway and chatbot: proxying, validation, and file uploads.
-- **Built an OpenRouter LLM service and a Telegram adapter with Telegraf.** Extracted chat business logic from the gateway into a separate microservice; separated user JWT authentication from service-to-service access.
+- **Built an OpenRouter LLM service and a Telegram adapter with Telegraf.** Extracted chatbot business logic from the gateway into a separate microservice; separated user JWT authentication from service-to-service access.
 - Worked with migrations, transactions, and idempotent callbacks; wrote integration and backend end-to-end tests with Jest / Supertest.
+- Built a **PHP / Laravel backend module for resident and staff messaging with AI assistance**, learning a new stack; worked on its integration with the existing CityOS and North Waterfront systems.
 
-**Collaboration and delivery**
+**Development workflow and delivery**
 
 - Define API contracts with the Laravel backend team, write specifications and implementation plans, and maintain the backlog.
-- Created and maintain repositories coordinating North Waterfront and CityOS applications and services. The North Waterfront stack runs locally with Docker Compose. Use GitHub Actions for development, system integration testing (SIT), and production environments.
-- Set up repository rules and agent instructions for Claude Code and OpenCode. Use AI coding tools alongside type checks, linting, tests, and a pull request workflow.
+- Set up frontend deployment CI/CD. Created and maintain repositories coordinating North Waterfront and CityOS applications and services, with local startup through Docker Compose. Use GitHub Actions for development, system integration testing (SIT), and production environments.
+- Use **Claude / Claude Code and Codex** through the company's agent platform: write specifications and plans, delegate implementation, review results, and have agents execute tests. Independently verify the output and technical decisions; set up repository rules for agents and use type checks, linting, tests, and pull requests.
 
 ### EdWin — Frontend Developer · project contract
 **May 2026 — July 2026**
@@ -94,6 +97,7 @@ Started with a Next.js prototype in March 2026; have been developing the platfor
 | Testing | Jest, Vitest, Testing Library, Storybook, Chromatic; backend integration and end-to-end tests: Supertest, Testcontainers |
 | Backend | Node.js, NestJS, Express, PostgreSQL, TypeORM, JWT, OAuth |
 | Delivery and monitoring | Git, Docker, Docker Compose, Nginx, GitHub Actions, Sentry, Vite, Webpack |
+| AI-assisted development | Claude / Claude Code, Codex, Cursor; specifications, plans, reviews, and agent-executed tests |
 
 ---
 

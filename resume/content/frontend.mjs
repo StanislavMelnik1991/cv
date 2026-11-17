@@ -9,11 +9,11 @@ export const frontendResumes = {
     headline: 'Senior Frontend Developer',
     tagline: 'React  /  Next.js  /  TypeScript',
     subject: 'React, Next.js, TypeScript — Resume 2026',
-    keywords: 'React, Next.js, TypeScript, NestJS, FSD, PostgreSQL',
+    keywords: 'React, Next.js, TypeScript, frontend architecture, FSD, CI/CD, Claude Code, Codex, NestJS',
     showPhoto: true,
     location: 'Минск, Беларусь',
-    availability: 'Удалённо / гибрид / офис · готов к переезду',
-    summary: '**4+ года коммерческого опыта** в React, Next.js и TypeScript. Спроектировал frontend-платформу из **30+ модулей** для сборки приложений CityOS, North Waterfront и SunBridge. Фокус — B2B-интерфейсы, UI-библиотеки и real-time; также — коммерческие интеграции LLM / OpenRouter и Telegram.',
+    availability: 'Удалённо из Минска / офис и гибрид в Минске · выход в течение недели после оффера',
+    summary: '**4+ года коммерческого опыта** в React, Next.js и TypeScript. Самостоятельно вёл frontend **CityOS и North Waterfront** — от архитектуры и реализации до проверок качества и **CI/CD для деплоя**. Спроектировал платформу из **30+ общих модулей** для нескольких приложений.',
     labels: {
       experience: 'Опыт работы',
       continued: 'Опыт, проекты и навыки',
@@ -21,7 +21,7 @@ export const frontendResumes = {
       skills: 'Ключевые навыки',
       education: 'Образование',
       languages: 'Языки',
-      footer: 'Резюме · октябрь 2026',
+      footer: 'Резюме · ноябрь 2026',
     },
     cityos: {
       name: 'CityOS (ООО «СИТИОС»)',
@@ -30,12 +30,12 @@ export const frontendResumes = {
       intro: 'Платформа управления недвижимостью. Внедрения: CityOS, North Waterfront, Nuanu и SunBridge.',
       groups: [
         {
-          title: 'Модульная платформа и админ-панель',
+          title: 'Самостоятельная разработка и общая платформа',
           bullets: [
-            '**Спроектировал frontend-архитектуру с нуля.** Приложения заказчиков собираются из общих модулей в отдельных репозиториях. Границы FSD контролируются линтингом; интеграция — через git submodules и workspace-пакеты для параллельной разработки.',
-            'Развиваю **общую UI-библиотеку**: компоненты, формы и API-контракты. Реализовал фильтры и кэширование справочников; учитывал часовые пояса и права в формах. Интегрировал Quill и загрузку медиа с санитизацией HTML.',
-            'Реализовал **real-time-чаты на Centrifugo / WebSocket**: история, ответственные, непрочитанные сообщения и права доступа. Разработал модули заявок, жителей, сотрудников, коммуникаций и доступа.',
-            'Настроил **Jest / Testing Library, Storybook / Chromatic**, TypeScript strict, линтеры и Sentry. Интегрировал легаси-API; добавил восстановление после ошибок устаревших чанков: хранение трёх сборок и однократная перезагрузка.',
+            '**Единственный постоянный frontend-разработчик** CityOS: самостоятельно вёл админ-панель и порталы CityOS / North Waterfront, архитектуру, реализацию, проверки качества и CI/CD для деплоя. Коллеги помогали эпизодически.',
+            '**Спроектировал архитектуру с нуля:** 30+ общих модулей и UI-библиотека для CityOS, North Waterfront и SunBridge. FSD, git submodules, workspaces; общие типы и API-контракты.',
+            'Реализовал **real-time-чаты на Centrifugo / WebSocket**: история, ответственные, непрочитанные и права доступа; модули заявок, жителей, сотрудников и коммуникаций.',
+            '**Качество и надёжность релизов:** TypeScript strict, линтеры, Jest / Testing Library, Storybook / Chromatic, Sentry. Интегрировал легаси-API; добавил восстановление после ошибок устаревших чанков.',
           ],
         },
         {
@@ -48,12 +48,12 @@ export const frontendResumes = {
         {
           title: 'Backend и интеграции · 2026',
           bullets: [
-            'Реализовал **LLM-сервис на OpenRouter и Telegram-адаптер на Telegraf**; выделил бизнес-логику чатов из API gateway в отдельный микросервис.',
-            'API gateway и чат-бот — **NestJS**. Разделил пользовательскую JWT-авторизацию и межсервисный доступ. **PostgreSQL / TypeORM**: миграции, транзакции, идемпотентные callback-и; серверные интеграционные и e2e-тесты Jest / Supertest.',
+            'Участвовал в разработке **NestJS gateway и чат-бота**; реализовал **OpenRouter LLM-сервис и Telegram / Telegraf**, вынес логику бота в микросервис. JWT и межсервисный доступ; **PostgreSQL / TypeORM**, миграции, транзакции, идемпотентность и тесты Jest / Supertest.',
+            'С AI разработал **модуль переписки жильцов и сотрудников на PHP / Laravel**; дорабатывал его интеграцию с CityOS и North Waterfront.',
           ],
         },
       ],
-      closing: '**Совместная работа и поставка:** согласую API-контракты и планы внедрения с Laravel-командой, веду бэклог. Создал и поддерживаю репозитории North Waterfront и CityOS; Docker Compose, GitHub Actions.',
+      closing: '**Процессы и поставка:** спецификации и API-контракты с backend-командой, бэклог; Docker Compose, GitHub Actions. **Claude / Codex:** планы, делегирование реализации, ревью и тесты с проверкой результата.',
     },
     edwin: {
       name: 'EdWin',
@@ -106,11 +106,11 @@ export const frontendResumes = {
     headline: 'Senior Frontend Developer',
     tagline: 'React  /  Next.js  /  TypeScript',
     subject: 'React, Next.js, TypeScript — Resume 2026',
-    keywords: 'React, Next.js, TypeScript, NestJS, FSD, PostgreSQL',
+    keywords: 'React, Next.js, TypeScript, frontend architecture, FSD, CI/CD, Claude Code, Codex, NestJS',
     showPhoto: false,
     location: 'Minsk, Belarus',
-    availability: 'Remote / hybrid / on-site · open to relocation',
-    summary: 'Frontend engineer with **4+ years of professional experience** in React, Next.js, and TypeScript. Designed a **frontend platform with 30+ modules** for CityOS, North Waterfront, and SunBridge applications. Focused on B2B interfaces, shared UI and real-time features; also delivered commercial LLM / OpenRouter and Telegram integrations.',
+    availability: 'Remote from Minsk / hybrid or on-site in Minsk · available within one week of an offer',
+    summary: '**4+ years of professional experience** in React, Next.js, and TypeScript. Independently owned **CityOS and North Waterfront** frontend development, from architecture and implementation to quality checks and **deployment CI/CD**. Designed a platform with **30+ shared modules** for multiple applications.',
     labels: {
       experience: 'Work experience',
       continued: 'Experience, projects & skills',
@@ -118,7 +118,7 @@ export const frontendResumes = {
       skills: 'Core skills',
       education: 'Education',
       languages: 'Languages',
-      footer: 'Resume · October 2026',
+      footer: 'Resume · November 2026',
     },
     cityos: {
       name: 'CityOS',
@@ -127,12 +127,12 @@ export const frontendResumes = {
       intro: 'Property management platform. Client deployments: CityOS, North Waterfront, Nuanu, and SunBridge.',
       groups: [
         {
-          title: 'Modular platform & admin application',
+          title: 'Independent development & shared platform',
           bullets: [
-            '**Designed the frontend architecture from scratch.** Client applications are assembled from shared modules in separate repositories. Linting enforces FSD boundaries; git submodules and workspace packages integrate modules for parallel development.',
-            'Maintain the **shared UI library**: components, forms, and API contracts. Implemented filters and reference-data caching; handled time zones and permissions in forms. Integrated Quill and media uploads with HTML sanitization.',
-            'Built **real-time resident chats with Centrifugo / WebSocket**: history, assignments, unread counters, and permissions. Developed modules for resident requests, residents, staff, communications, and access control.',
-            'Set up **Jest / Testing Library, Storybook / Chromatic**, strict TypeScript, linting, and Sentry. Integrated the legacy API; added recovery from stale-chunk errors by retaining the last three builds and reloading the application once.',
+            'CityOS\'s **only permanent frontend developer**: independently owned the admin application and CityOS / North Waterfront portals, architecture, implementation, quality checks, and deployment CI/CD. Colleagues helped occasionally.',
+            '**Designed the architecture from scratch:** 30+ shared modules and a UI library for CityOS, North Waterfront, and SunBridge. FSD, git submodules, workspaces, shared types, and API contracts.',
+            'Built **real-time chats with Centrifugo / WebSocket**: history, assignments, unread counters, and permissions; modules for resident requests, residents, staff, and communications.',
+            '**Quality and release reliability:** strict TypeScript, linting, Jest / Testing Library, Storybook / Chromatic, and Sentry. Integrated legacy APIs and added recovery from stale-chunk errors.',
           ],
         },
         {
@@ -145,12 +145,12 @@ export const frontendResumes = {
         {
           title: 'Backend & integrations · 2026',
           bullets: [
-            'Built an **OpenRouter LLM service and a Telegram adapter with Telegraf**; extracted chat business logic from the API gateway into a separate microservice.',
-            'API gateway and chatbot: **NestJS**. Separated user JWT authentication from service-to-service access. **PostgreSQL / TypeORM**: migrations, transactions, idempotent callbacks; backend integration and end-to-end tests with Jest / Supertest.',
+            'Contributed to the **NestJS gateway and chatbot**; built an **OpenRouter LLM service and Telegram / Telegraf adapter** and extracted bot logic into a microservice. User JWT and service-to-service access; **PostgreSQL / TypeORM**, migrations, transactions, idempotency, and Jest / Supertest.',
+            'Built a **PHP / Laravel module for resident and staff messaging with AI assistance**; worked on its integration with CityOS and North Waterfront.',
           ],
         },
       ],
-      closing: '**Collaboration & delivery:** define API contracts and implementation plans with the Laravel team; maintain the backlog. Created and maintain North Waterfront and CityOS integration repositories; Docker Compose, GitHub Actions.',
+      closing: '**Workflow & delivery:** specifications and API contracts with the backend team, backlog; Docker Compose and GitHub Actions. **Claude / Codex:** plans, delegated implementation, reviews, and tests with independent verification.',
     },
     edwin: {
       name: 'EdWin',
