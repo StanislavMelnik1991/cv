@@ -2,6 +2,8 @@
 
 Четыре PDF: frontend и Full-stack / AI-first, каждый на русском и английском, по две страницы A4. Встроены Noto Sans, активные ссылки на email, телефон и GitHub; текст можно выделять и извлекать. Русские версии — с фотографией, английские — без фотографии.
 
+Каждая версия хранится в `resumes/<версия>/<язык>/`: полный текст `Melnik_Stanislau_Resume.md` и PDF `Melnik_Stanislau_Resume.pdf`. Версии — `frontend` и `ai-first`, языки — `ru` и `en`.
+
 ## Сборка
 
 Из корня репозитория, Node.js 22+ и pnpm из package.json:
@@ -13,14 +15,14 @@ NODE_OPTIONS="--max-old-space-size=1536" pnpm build:pdf
 
 | Версия | Русский PDF | Английский PDF |
 | --- | --- | --- |
-| Frontend | [Melnik_Stanislau_Resume_2026.pdf](../pdf/frontend/Melnik_Stanislau_Resume_2026.pdf) | [Melnik_Stanislau_Resume_2026_EN.pdf](../pdf/frontend/Melnik_Stanislau_Resume_2026_EN.pdf) |
-| AI-first | [Melnik_Stanislau_Resume_2026_AI_First.pdf](../pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf) | [Melnik_Stanislau_Resume_2026_AI_First_EN.pdf](../pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf) |
+| Frontend | [Melnik_Stanislau_Resume.pdf](../resumes/frontend/ru/Melnik_Stanislau_Resume.pdf) | [Melnik_Stanislau_Resume.pdf](../resumes/frontend/en/Melnik_Stanislau_Resume.pdf) |
+| AI-first | [Melnik_Stanislau_Resume.pdf](../resumes/ai-first/ru/Melnik_Stanislau_Resume.pdf) | [Melnik_Stanislau_Resume.pdf](../resumes/ai-first/en/Melnik_Stanislau_Resume.pdf) |
 
 Сборка выполняется последовательно, не использует браузер, внешние сервисы или загрузку шрифтов из сети. Зависимости закреплены в pnpm-lock.yaml. Шрифты Noto Sans Regular / SemiBold / Bold взяты из [notofonts/noto-fonts](https://github.com/notofonts/noto-fonts/tree/main/hinted/ttf/NotoSans); SIL Open Font License находится в [fonts/LICENSE.txt](fonts/LICENSE.txt).
 
 ## Источники и оформление
 
-- [content.mjs](content.mjs) — явный реестр четырёх вариантов с путями исходников и PDF.
+- [content.mjs](content.mjs) — явный реестр четырёх вариантов. Поле `source` задаёт путь Markdown от корня репозитория, `filename` — путь PDF относительно `resumes/`.
 - [content/frontend.mjs](content/frontend.mjs) — сокращённые тексты frontend-версии. Полные тексты — в [resumes/frontend](../resumes/frontend/).
 - [content/ai-first.mjs](content/ai-first.mjs) — сокращённые тексты новой версии. Полные тексты — в [resumes/ai-first](../resumes/ai-first/).
 - [build.mjs](build.mjs) — общий макет, типографика, переносы, ссылки, фотография и PDF-метаданные. Должность и стек в заголовках, тема, ключевые слова и имя выходного файла задаются выбранной версией.
@@ -40,12 +42,12 @@ Frontend-версия сохраняет позиционирование Senior
 После изменений проверьте обе страницы каждого затронутого варианта. При изменении общего макета проверьте все четыре PDF. При наличии Poppler:
 
 ```sh
-pdfinfo pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf
-pdftotext pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf -
-pdftoppm -scale-to 1200 -png pdf/frontend/Melnik_Stanislau_Resume_2026.pdf resume/previews/frontend/ru
-pdftoppm -scale-to 1200 -png pdf/frontend/Melnik_Stanislau_Resume_2026_EN.pdf resume/previews/frontend/en
-pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf resume/previews/ai-first/ru
-pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf resume/previews/ai-first/en
+pdfinfo resumes/ai-first/ru/Melnik_Stanislau_Resume.pdf
+pdftotext resumes/ai-first/ru/Melnik_Stanislau_Resume.pdf -
+pdftoppm -scale-to 1200 -png resumes/frontend/ru/Melnik_Stanislau_Resume.pdf resume/previews/frontend/ru
+pdftoppm -scale-to 1200 -png resumes/frontend/en/Melnik_Stanislau_Resume.pdf resume/previews/frontend/en
+pdftoppm -scale-to 1200 -png resumes/ai-first/ru/Melnik_Stanislau_Resume.pdf resume/previews/ai-first/ru
+pdftoppm -scale-to 1200 -png resumes/ai-first/en/Melnik_Stanislau_Resume.pdf resume/previews/ai-first/en
 ```
 
 Проверьте две страницы A4, читаемость кириллицы, выделяемый текст, ссылки контактов и метаданные.
