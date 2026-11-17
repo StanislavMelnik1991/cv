@@ -39,9 +39,9 @@ export const aiFirstResumes = {
         {
           title: 'Backend, данные и надёжность · 2026',
           bullets: [
-            'С AI **разработал модуль чатов на PHP / Laravel**, осваивая новый стек. Интегрировал его в CityOS и North Waterfront: модели, миграции, API сотрудников и жильцов, доступ, real-time и уведомления.',
+            'С AI **разработал модуль переписки жильцов и сотрудников на PHP / Laravel**, осваивая новый стек. Дорабатывал его интеграцию с CityOS и North Waterfront: модели, миграции, API, доступ, real-time и уведомления.',
             '**Транзакции и идемпотентность**, конкурентные изменения, доступ по компании и адресу; real-time после коммита. Писал функциональные тесты и исправлял перенесённые проверки с неверными URL-префиксами.',
-            'Участвовал в разработке **NestJS gateway и чат-бота**; выделил чат-логику в микросервис. JWT и межсервисный доступ; **PostgreSQL / TypeORM**, миграции, callback-операции и тесты Jest / Supertest.',
+            'Участвовал в разработке **NestJS gateway и чат-бота для LLM / Telegram**; выделил логику бота из gateway в микросервис. JWT и межсервисный доступ; **PostgreSQL / TypeORM**, миграции, callback-операции и тесты Jest / Supertest.',
           ],
         },
         {
@@ -133,9 +133,9 @@ export const aiFirstResumes = {
         {
           title: 'Backend, data & reliability · 2026',
           bullets: [
-            'Built a **PHP / Laravel chat module with AI assistance**, learning a new stack. Integrated it with CityOS and North Waterfront: models, migrations, staff and resident APIs, access control, real-time events, and notifications.',
+            'Built a **PHP / Laravel module for resident and staff messaging with AI assistance**, learning a new stack. Worked on its integration with CityOS and North Waterfront: models, migrations, APIs, access control, real-time events, and notifications.',
             '**Transactions and idempotency**, concurrent state changes, company/address access boundaries, and real-time events after commit. Wrote functional tests and fixed migrated tests with incorrect URL prefixes.',
-            'Contributed to the **NestJS gateway and chatbot**; extracted chat logic into a microservice. User JWT and service-to-service access; **PostgreSQL / TypeORM**, migrations, callbacks, and Jest / Supertest tests.',
+            'Contributed to the **NestJS gateway and chatbot for LLM / Telegram**; extracted bot logic from the gateway into a microservice. User JWT and service-to-service access; **PostgreSQL / TypeORM**, migrations, callbacks, and Jest / Supertest tests.',
           ],
         },
         {

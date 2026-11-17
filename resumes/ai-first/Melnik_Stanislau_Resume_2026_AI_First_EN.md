@@ -38,10 +38,10 @@ Property management platform with an admin application, resident portals, and se
 
 **Backend, data, and reliability**
 
-- **Built a PHP / Laravel chat backend module with AI assistance**, learning a new stack for the task. Worked on its integration with the existing CityOS and North Waterfront systems: conversation models, migrations, staff and resident APIs, access control, real-time events, and notifications.
+- **Built a PHP / Laravel backend module for resident and staff messaging with AI assistance**, learning a new stack for the task. Worked on its integration with the existing CityOS and North Waterfront systems: conversation models, migrations, staff and resident APIs, access control, real-time events, and notifications.
 - Implemented transactional message writes, request-key idempotency, handling of concurrent state changes, and data access boundaries by company and address. Published real-time events after transaction commit.
 - Covered complex scenarios with functional tests. Fixed migrated tests with incorrect URL prefixes and checked that they exercised the application's actual routes.
-- Contributed to the **NestJS** API gateway and chatbot. Extracted chat business logic into a separate microservice and separated user JWT authentication from service-to-service access. Worked with PostgreSQL / TypeORM, migrations, transactions, and idempotent callbacks; Jest / Supertest.
+- Contributed to the **NestJS** API gateway and chatbot for LLM and Telegram workflows. Extracted chatbot business logic from the gateway into a separate microservice and separated user JWT authentication from service-to-service access. Worked with PostgreSQL / TypeORM, migrations, transactions, and idempotent callbacks; Jest / Supertest.
 
 **LLM and external integrations**
 
