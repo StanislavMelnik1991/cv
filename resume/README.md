@@ -1,43 +1,49 @@
 # PDF-резюме
 
-Две версии по две страницы A4, со встроенными шрифтами Noto Sans и активными ссылками на email, телефон и GitHub. Русская версия — с фотографией; английская — без фотографии для международных откликов. Текст остаётся текстом: его можно выделять, искать и извлекать из PDF.
+Четыре PDF: frontend и Full-stack / AI-first, каждый на русском и английском, по две страницы A4. Встроены Noto Sans, активные ссылки на email, телефон и GitHub; текст можно выделять и извлекать. Русские версии — с фотографией, английские — без фотографии.
 
 ## Сборка
 
-Нужны Node.js 22+ и pnpm:
+Из корня репозитория, Node.js 22+ и pnpm из package.json:
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm build:pdf
+NODE_OPTIONS="--max-old-space-size=1536" pnpm build:pdf
 ```
 
-Готовые файлы:
+| Версия | Русский PDF | Английский PDF |
+| --- | --- | --- |
+| Frontend | [Melnik_Stanislau_Resume_2026.pdf](../pdf/frontend/Melnik_Stanislau_Resume_2026.pdf) | [Melnik_Stanislau_Resume_2026_EN.pdf](../pdf/frontend/Melnik_Stanislau_Resume_2026_EN.pdf) |
+| AI-first | [Melnik_Stanislau_Resume_2026_AI_First.pdf](../pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf) | [Melnik_Stanislau_Resume_2026_AI_First_EN.pdf](../pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf) |
 
-- `pdf/Melnik_Stanislau_Resume_2026.pdf` — русский.
-- `pdf/Melnik_Stanislau_Resume_2026_EN.pdf` — английский.
+Сборка выполняется последовательно, не использует браузер, внешние сервисы или загрузку шрифтов из сети. Зависимости закреплены в pnpm-lock.yaml. Шрифты Noto Sans Regular / SemiBold / Bold взяты из [notofonts/noto-fonts](https://github.com/notofonts/noto-fonts/tree/main/hinted/ttf/NotoSans); SIL Open Font License находится в [fonts/LICENSE.txt](fonts/LICENSE.txt).
 
-Сборка не использует браузер, внешние сервисы или загрузку шрифтов из сети. Зависимости закреплены в `pnpm-lock.yaml`; шрифты и их лицензия находятся в `fonts/`.
+## Источники и оформление
 
-Noto Sans Regular / SemiBold / Bold взяты из [notofonts/noto-fonts](https://github.com/notofonts/noto-fonts/tree/main/hinted/ttf/NotoSans), лицензия SIL Open Font License 1.1 включена в репозиторий.
+- [content.mjs](content.mjs) — явный реестр четырёх вариантов с путями исходников и PDF.
+- [content/frontend.mjs](content/frontend.mjs) — сокращённые тексты frontend-версии. Полные тексты — в [resumes/frontend](../resumes/frontend/).
+- [content/ai-first.mjs](content/ai-first.mjs) — сокращённые тексты новой версии. Полные тексты — в [resumes/ai-first](../resumes/ai-first/).
+- [build.mjs](build.mjs) — общий макет, типографика, переносы, ссылки, фотография и PDF-метаданные. Должность и стек в заголовках, тема, ключевые слова и имя выходного файла задаются выбранной версией.
+- [assets/StanislauMelnik.jpg](../assets/StanislauMelnik.jpg) — исходная фотография без изменений.
+- [skills/hard_skills.md](../skills/hard_skills.md) и [skills/confirmations.md](../skills/confirmations.md) — сводка навыков, подтверждения и ограничения опыта.
 
-## Содержание и оформление
+Markdown и PDF-тексты редактируются вручную: автоматической синхронизации нет. После изменения фактов обновляйте соответствующие файлы обоих языков и пересобирайте PDF. PDF — краткая редакция полного Markdown, поэтому некоторые детали опущены для двухстраничного формата.
 
-Источники фактов — `Melnik_Stanislau_Resume_2026.md`, `Melnik_Stanislau_Resume_2026_EN.md` и итоговый `hard_skills.md` в корне репозитория. Уточнения из ревью отражены также в `hard_skills_2026.md`. Для PDF текст сокращён: в начало вынесена платформа из 30+ модулей для сборки приложений CityOS, North Waterfront и SunBridge. Это общий набор модулей, а не утверждение об одинаковом составе каждого приложения. Nuanu сохранён в описании внедрений платформы. Сохранены все работодатели; Twitch-прототип и LLM Integrator представлены как этапы одного проекта с марта 2026 года. Подробности процессов и готовность к командировкам остаются в полных Markdown-версиях.
+Frontend-версия сохраняет прежнее позиционирование и содержание. В AI-first-версии вперёд вынесены самостоятельное ведение разработки, корпоративная платформа Claude / Codex, полный агентный цикл, серверный модуль чатов на PHP / Laravel и интеграции. Коммерческий backend явно датирован 2026 годом. Должность CityOS остаётся Frontend Developer; новая шапка обозначает целевую роль.
 
-Коммерческий backend описан через API gateway и чат-бот на NestJS. Отдельно указаны OpenRouter, Telegram / Telegraf и выделение чат-логики в микросервис. CityOS-портал описан как развитие North Waterfront, без заявления о двух независимых разработках с нуля; общий период блока — 2026 год. В английском тексте SIT расшифрован как system integration testing. Русское юридическое название и имя в колонтитуле локализованы.
+Сохраняются все работодатели и даты. EdWin — проектный контракт; LLM Integrator и мартовский Twitch-прототип — этапы одного личного проекта. Не добавляются выдуманные метрики ускорения, авторство корпоративной агентной платформы, титул CTO в прежней работе, практический Python / ad-tech / биллинг или уровень английского выше B1. Общие модули и порталы не представляются независимыми разработками с нуля для каждого внедрения. Для поиска и откликов используйте текущие ограничения места работы из [AGENTS.md](../AGENTS.md), даже если более ранний frontend-текст допускает переезд.
 
-По уточнению автора Fastify исключён из личного опыта и резюме. В Markdown, PDF и резюме на rabota.by используется «4+ года» / «4+ years». Формулировка на rabota.by восстановлена с «3+» на «4+» 29.10.2026; фактический стаж по датам — 4 года и 4 месяца. Даты занятости сохранены.
+## Проверка и превью
 
-Редактура не добавляет неподтверждённые метрики, размер команды, наставничество или разрешения на работу. Сохранены исходные должности, даты занятости и уровень английского B1. EdWin обозначен как проектный контракт без утверждений о количестве рабочих часов. Jest / Supertest описываются как серверные интеграционные и e2e-тесты, отдельно от тестов React-компонентов.
+Сборка проверяет наличие ожидаемых мест работы в Markdown, поддержку символов шрифтом и выход текста за отведённую область. Проверку проходит каждая страница каждого PDF.
 
-- `content.mjs` — сокращённая редакция на двух языках; `showPhoto` управляет фотографией для каждого языка. При изменении исходных MD нужно обновить соответствующие пункты здесь; автоматической синхронизации текста нет.
-- `build.mjs` — макет, типографика, переносы, ссылки, фотография и метаданные PDF. Сборка завершается ошибкой, если содержимое выходит за отведённую область страницы.
-- `../StanislauMelnik.jpg` — исходная фотография; используется без изменения файла.
-
-После редактирования пересоберите PDF и проверьте обе страницы каждой версии визуально. При наличии Poppler:
+После изменений проверьте обе страницы каждого затронутого варианта. При изменении общего макета проверьте все четыре PDF. При наличии Poppler:
 
 ```sh
-pdfinfo pdf/Melnik_Stanislau_Resume_2026.pdf
-pdftoppm -scale-to 1400 -png pdf/Melnik_Stanislau_Resume_2026.pdf /tmp/resume-ru
-pdftotext pdf/Melnik_Stanislau_Resume_2026.pdf -
+pdfinfo pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf
+pdftotext pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf -
+pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First.pdf resume/previews/ai-first/ru
+pdftoppm -scale-to 1200 -png pdf/ai-first/Melnik_Stanislau_Resume_2026_AI_First_EN.pdf resume/previews/ai-first/en
 ```
+
+Проверьте две страницы A4, читаемость кириллицы, выделяемый текст, ссылки контактов и метаданные. Превью новой версии: [RU 1](previews/ai-first/ru-1.png), [RU 2](previews/ai-first/ru-2.png), [EN 1](previews/ai-first/en-1.png), [EN 2](previews/ai-first/en-2.png).
